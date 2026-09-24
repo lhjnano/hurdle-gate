@@ -23,6 +23,6 @@ jobs:
       - name: Smoke
         run: bash tests/run_smoke.sh
       - name: Self-dogfood
-        # 자기 자신이 게이트를 통과해야 함 — tests/test_cli.py가 src/hurdle/cli.py의
-        # 테스트로 매핑되는 구조. 나머지 자기 갭은 루트 .hurdle.json으로 관리한다.
+        # hurdle must pass its own gate — tests/test_cli.py maps to
+        # src/hurdle/cli.py. Remaining self-gaps are managed via the root .hurdle.json.
         run: hurdle scan . --strict

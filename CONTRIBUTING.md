@@ -1,6 +1,6 @@
-# 기여 가이 (CONTRIBUTING)
+# Contributing
 
-## 개발 환경
+## Development environment
 
 ```bash
 python3 -m venv .venv
@@ -8,36 +8,41 @@ source .venv/bin/activate
 pip install -e .[dev]
 ```
 
-Python 3.9+ 표준 라이브러리만 사용한다(런타임 외부 의존성 0). dev 의존성은 pytest뿐이다.
+Uses only the Python 3.9+ standard library (zero runtime dependencies). The
+only dev dependency is pytest.
 
-## 검증
+## Verification
 
 ```bash
 make test    # pytest (tests/test_cli.py)
-make smoke   # bash tests/run_smoke.sh — 판정 회귀 스모크
-make check   # dogfood — hurdle scan . --strict (자기 자신을 게이트)
+make smoke   # bash tests/run_smoke.sh — verdict-regression smoke test
+make check   # dogfood — hurdle scan . --strict (gates itself)
 ```
 
-## 언어 컨벤션 추가
+## Adding a language convention
 
-새 언어의 "테스트 존재" 규칙을 추가하는 절차:
+Steps to add a "test existence" rule for a new language:
 
-1. `src/hurdle/cli.py`의 `classify()`에 확장자 → `(lang, kind)` 분기를,
-   `test_candidates()`에 매핑 후보 경로를 추가한다.
-2. `tests/fixtures/`에 최소 케이스(covered / gap 최소 1개씩)를 추가한다.
-3. `tests/test_cli.py`의 기대표(`CONFIGLESS_EXPECT`)에 판정 단언을 추가한다.
+1. Add an extension → `(lang, kind)` branch to `classify()` and the mapping
+   candidate paths to `test_candidates()` in `src/hurdle/cli.py`.
+2. Add minimal fixtures under `tests/fixtures/` (at least one covered and one
+   gap case).
+3. Add verdict assertions to the expectation table (`CONFIGLESS_EXPECT`) in
+   `tests/test_cli.py`.
 
-C/셸처럼 파일 1:1 매핑이 불가능한 구조는 `module_map` 키워드 기반
-module-aggregated heuristic으로 판정하고, confidence는 `heuristic`을 유지한다.
+For trees like C/shell where file-to-file mapping is impossible, verdicts use
+the `module_map` keyword-based module-aggregated heuristic and keep confidence
+at `heuristic`.
 
-## config 스키마 변경
+## Changing the config schema
 
-`.hurdle.json` 스키마(`exclude` / `allowlist` / `module_map`)를 바꾸면
-`.hurdle.example.json`과 README의 설정표를 같이 갱신해야 한다.
+When you change the `.hurdle.json` schema (`exclude` / `allowlist` /
+`module_map`), update `.hurdle.example.json` and the configuration table in
+the README in the same change.
 
-## PR 체크리스트
+## PR checklist
 
-- [ ] `pytest` 통과
-- [ ] `bash tests/run_smoke.sh` 통과
-- [ ] `hurdle scan . --strict` 통과
-- [ ] 사용자에게 보이는 변경이면 `CHANGELOG.md`에 항목 추가
+- [ ] `pytest` passes
+- [ ] `bash tests/run_smoke.sh` passes
+- [ ] `hurdle scan . --strict` passes
+- [ ] User-visible changes get a `CHANGELOG.md` entry

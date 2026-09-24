@@ -9,5 +9,5 @@ test:
 smoke:
 	bash tests/run_smoke.sh
 
-check: # self-dogfood — 자기 자신을 게이트
+check: # self-dogfood — run the gate on this repo itself
 	hurdle scan . --strict

@@ -1,8 +1,8 @@
 {
   "exclude": ["fixtures/"],
   "allowlist": {
-    "src/hurdle/__init__.py": "패키지 마커(__version__ 상수)만 담는 파일",
-    "src/hurdle/__main__.py": "cli.main()에 위임하는 진입점 — main()은 tests/test_cli.py가 직접 검증",
-    "ci/pre-commit-hook.sh": "배포용 훅 템플릿 — 동등 경로는 run_smoke.sh가 실행해 검증"
+    "src/hurdle/__init__.py": "package marker file holding only the __version__ constant",
+    "src/hurdle/__main__.py": "entry point delegating to cli.main() — main() is verified directly by tests/test_cli.py",
+    "ci/pre-commit-hook.sh": "hook template for distribution — the equivalent path is exercised and verified by run_smoke.sh"
   }
 }

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "hurdle"
 version = "0.1.0"
-description = "소스↔테스트 파일 존재 매핑 정적 분석 게이트 (source↔test existence gate)"
+description = "Static-analysis gate for source↔test file existence mapping"
 readme = "README.md"
 requires-python = ">=3.9"
 license = "Apache-2.0"

@@ -1,6 +1,6 @@
-"""run_smoke.sh 판정의 pytest 이식 — subprocess 대신 hurdle.cli.main()을 직접 호출한다.
+"""pytest port of the run_smoke.sh verdicts — calls hurdle.cli.main() directly instead of a subprocess.
 
-원본 fixtures는 오염시키지 않는다(사본 사용은 run_smoke.sh의 pristine-copy 패턴 참조).
+The original fixtures are left untouched (for the pristine-copy pattern, see run_smoke.sh).
 """
 
 import json
@@ -14,7 +14,7 @@ from hurdle.cli import main
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
 
-# 무설정 베이스 판정 — 스모크 1단계와 동일한 기대표(원본 8종 + configless 신규 4종).
+# Configless base verdicts — the same expectation table as smoke stage 1 (8 original entries + 4 new configless ones).
 CONFIGLESS_EXPECT = {
     "go/pkg/calc.go": "ok",
     "go/pkg/util.go": "ok",
@@ -24,15 +24,15 @@ CONFIGLESS_EXPECT = {
     "ts/a.ts": "ok",
     "ts/b.ts": "gap",
     "other/note.txt": "unmapped",
-    "c/mod1/x.c": "ok",  # 모듈명이 C 테스트 경로에 등장 (heuristic)
+    "c/mod1/x.c": "ok",  # module name appears in the C test path (heuristic)
     "c/mod2/y.c": "gap",
-    "c/mod3/z.c": "gap",  # module_map 미로딩
-    "excluded/skip.go": "gap",  # exclude 미로딩
+    "c/mod3/z.c": "gap",  # module_map not loaded
+    "excluded/skip.go": "gap",  # exclude not loaded
 }
 
 
 def pristine_copy(tmp_path):
-    """원본 fixtures의 사본에서 .hurdle.json을 제거해 무설정 상태를 만든다."""
+    """Remove .hurdle.json from a copy of the original fixtures to produce a configless state."""
     dst = tmp_path / "tree"
     shutil.copytree(FIXTURES, dst, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     (dst / ".hurdle.json").unlink()
@@ -49,7 +49,7 @@ def test_configless_base_verdicts(tmp_path, capsys):
     out = tmp_path / "report.json"
     assert main(["scan", str(tree), "--json", str(out)]) == 0
     data = load_report(out)
-    # 8파일 기존 판정(+신규 4종) 일치, 그리고 예상 밖 파일 없음
+    # The 8 original verdicts (+ 4 new ones) match, with no unexpected files
     assert {r["path"]: r["status"] for r in data["files"]} == CONFIGLESS_EXPECT
     assert data["summary"]["total"] == 12
     conf = {r["path"]: r["confidence"] for r in data["files"]}
@@ -70,13 +70,13 @@ def test_config_autodiscovery(tmp_path):
     assert by["py/lonely.py"]["reason"] == "deliberately untested fixture"
     assert by["c/mod1/x.c"]["status"] == "ok"
     assert by["c/mod2/y.c"]["status"] == "gap"
-    # module_map 키워드가 C 테스트 파일 내용(killer.c)에서 발견된 경로
+    # Path matched via a module_map keyword found in the C test file contents (killer.c)
     assert by["c/mod3/z.c"]["status"] == "ok"
     assert by["c/mod3/z.c"]["matched_test"] == "c/tests/killer.c"
     summary = data["summary"]
     assert (summary["excluded"], summary["allowed"]) == (1, 1)
     assert summary["gap"] >= 1
-    assert Path(data["config"]).name == ".hurdle.json"  # PATH/.hurdle.json 자동 탐색
+    assert Path(data["config"]).name == ".hurdle.json"  # PATH/.hurdle.json autodiscovery
     assert data["mode"] == "full"
 
 
@@ -122,7 +122,7 @@ def test_diff_judges_only_changed_files(tmp_path):
         ["-c", "user.email=hurdle@example.com", "-c", "user.name=hurdle", "commit", "-qm", "init"],
     ):
         subprocess.run(git + cmd, check=True, capture_output=True)
-    with open(tree / "ts" / "b.ts", "a") as fh:  # 커밋되지 않은 수정 1건
+    with open(tree / "ts" / "b.ts", "a") as fh:  # one uncommitted modification
         fh.write("// touched\n")
     out = tmp_path / "diff.json"
     assert main(["scan", str(tree), "--diff", "HEAD", "--json", str(out)]) == 0

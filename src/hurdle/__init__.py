@@ -1,3 +1,3 @@
-"""hurdle — 소스↔테스트 파일 존재 매핑 정적 분석 게이트 (source↔test existence gate)."""
+"""hurdle — static-analysis gate for source↔test file existence mapping."""
 
 __version__ = "0.1.0"

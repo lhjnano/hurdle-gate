@@ -54,7 +54,7 @@ git repository) = 2. CI decides pass/fail from the strict-mode exit code.
 | Language | Test-existence verdict | confidence |
 |---|---|---|
 | **go** | Package-level: an exact `{stem}_test.go` match wins first; otherwise covered if any `*_test.go` exists in the same package (directory) | exact |
-| **py** | Probes 4 pytest-convention candidate paths — beside the file / in a `tests/` directory × `test_{stem}.py` / `{stem}_test.py` combinations | exact |
+| **py** | Probes 4 pytest-convention candidate paths — beside the file / in a `tests/` directory × `test_{stem}.py` / `{stem}_test.py` combinations — plus variant names `tests/test_{stem}_*.py` and `tests/test_*_{stem}.py` (v0.2.0). `__init__.py` counts as a package marker and non-test files under `test_dirs` (default `tests`, `test`) count as test-support — both excluded rather than gapped (config: `strict_init`, `test_dirs`) | exact |
 | **ts/js** | Naming conventions: the `*.test.ts(x)` / `*.spec.ts(x)` families | exact |
 | **c / shell** | File-to-file mapping is impossible in trees like lustre (centralized `lustre/tests/` + `kunit/`), so coverage is aggregated per module/directory (heuristic). Listing module→test keywords in `module_map` improves accuracy | heuristic |
 

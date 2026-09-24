@@ -5,7 +5,12 @@ hurdle scan PATH [--json FILE] [--strict] [--config FILE] [--diff BASE]
 Maps source files to their conventional test counterparts and reports gaps.
 Go: *_test.go in the same directory (package-level convention).
 Python: test_{stem}.py / {stem}_test.py next to the file, tests/test_{stem}.py
-relative to the file's directory or the scan root.
+relative to the file's directory or the scan root; variant names
+tests/test_{stem}_*.py and tests/test_*_{stem}.py match via fnmatch (the
+required '_' separators keep {stem} on word boundaries). "__init__.py" is a
+package marker (excluded) unless strict_init=true; non-test .py files under a
+configured test_dirs directory (default ["tests","test"]) are excluded as
+test-support modules.
 JS/TS: {stem}.test.{ext} / {stem}.spec.{ext} next to the file.
 C/shell (.c .h .cc .cpp .sh): module-aggregated heuristic mode. The module is
 the directory holding the source file; a module is ok (confidence=heuristic)
@@ -18,7 +23,11 @@ Config (--config FILE; default: PATH/.hurdle.json when present):
              otherwise fnmatch glob matched against the relpath and the file
              name. Matching sources get status=excluded (counted, not gaps).
   allowlist: {"rel/path": "reason"} — exact relpath match; status=allowed
-             with the reason shown in the report (wins over exclude).
+              with the reason shown in the report (wins over exclude).
+  test_dirs:  directory names marking test context (default ["tests","test"]);
+              non-test .py files under them are excluded as test-support.
+  strict_init: when true, __init__.py is judged as a normal source file
+              instead of a package marker.
   module_map: {"module-relpath-or-name": ["keyword", ...]} for the C heuristic.
 --diff BASE: only judge files added/modified/renamed between BASE and HEAD,
 plus uncommitted working-tree changes vs BASE; test existence matching still
@@ -54,6 +63,8 @@ class Config:
         self.exclude = list(data.get("exclude") or [])
         self.allowlist = dict(data.get("allowlist") or {})
         self.module_map = dict(data.get("module_map") or {})
+        self.strict_init = bool(data.get("strict_init", False))
+        self.test_dirs = list(data.get("test_dirs") or ["tests", "test"])
 
     def exclusion_hit(self, rel):
         parts = rel.split("/")
@@ -68,6 +79,9 @@ class Config:
 
     def allow_reason(self, rel):
         return self.allowlist.get(rel)
+
+    def under_test_dir(self, rel):
+        return any(p in self.test_dirs for p in rel.split("/"))
 
     def module_keywords(self, module_rel, module_name):
         kws = self.module_map.get(module_rel)
@@ -97,6 +111,8 @@ def classify(name, rel=None):
     if ext == "py":
         if name == "conftest.py" or root.startswith("test_") or root.endswith("_test"):
             return ("py", "test")
+        if name == "__init__.py":
+            return ("py", "marker")
         return ("py", "source")
     if ext in JS_EXTS:
         if root.endswith(".test") or root.endswith(".spec"):
@@ -161,6 +177,28 @@ def test_candidates(path, lang, scan_root):
             os.path.join(d, stem + ".spec" + ext),
         ]
     return []
+
+
+def py_variant_test(d, stem, scan_root, cfg, listing):
+    """Variant test lookup for Python sources (v0.2.0).
+
+    Matches tests/test_{stem}_*.py and tests/test_*_{stem}.py via fnmatch
+    inside the configured test dirs next to the file (d) and at the scan
+    root; the required '_' separators keep {stem} on word boundaries.
+    Returns the matched absolute path or None.
+    """
+    patterns = ("test_%s_*.py" % stem, "test_*_%s.py" % stem)
+    seen = set()
+    for base in (d, scan_root):
+        for td in cfg.test_dirs:
+            tdir = os.path.normpath(os.path.join(base, td))
+            if tdir in seen:
+                continue
+            seen.add(tdir)
+            for fname in listing(tdir):
+                if any(fnmatch.fnmatch(fname, p) for p in patterns):
+                    return os.path.join(tdir, fname)
+    return None
 
 
 def c_module_status(rel, c_tests, read_content, cfg):
@@ -239,11 +277,29 @@ def scan(path, cfg=None, diff_base=None):
             continue
 
     # Pass 2: judge every non-test file.
+    py_dir_cache = {}
+
+    def tests_dir_listing(dirpath):
+        if dirpath not in py_dir_cache:
+            try:
+                py_dir_cache[dirpath] = sorted(
+                    e.name
+                    for e in os.scandir(dirpath)
+                    if e.is_file(follow_symlinks=False) and e.name.endswith(".py")
+                )
+            except OSError:
+                py_dir_cache[dirpath] = []
+        return py_dir_cache[dirpath]
+
     for f in walk(root):
         rel = os.path.relpath(f, root).replace(os.sep, "/")
         lang, kind = classify(os.path.basename(f), rel)
         if kind == "test":
             continue
+        if kind == "marker" and cfg.strict_init:
+            kind = "source"
+        if kind == "source" and lang == "py" and cfg.under_test_dir(rel):
+            kind = "support"
         entry = {"path": rel, "lang": lang}
         if kind == "other":
             entry.update(status="unmapped", matched_test=None, confidence="exact")
@@ -253,6 +309,19 @@ def scan(path, cfg=None, diff_base=None):
         if reason is not None:
             entry.update(
                 status="allowed", matched_test=None, confidence="exact", reason=reason
+            )
+            results.append(entry)
+            continue
+        if kind in ("marker", "support"):
+            entry.update(
+                status="excluded",
+                matched_test=None,
+                confidence="exact",
+                reason=(
+                    "package marker (__init__.py)"
+                    if kind == "marker"
+                    else "test-support module under test dir"
+                ),
             )
             results.append(entry)
             continue
@@ -280,6 +349,12 @@ def scan(path, cfg=None, diff_base=None):
                     status = "ok"
                     matched = os.path.relpath(cand, root).replace(os.sep, "/")
                     break
+            if status == "gap" and lang == "py":
+                stem = os.path.splitext(name)[0]
+                hit = py_variant_test(d, stem, root, cfg, tests_dir_listing)
+                if hit:
+                    status = "ok"
+                    matched = os.path.relpath(hit, root).replace(os.sep, "/")
         entry.update(status=status, matched_test=matched, confidence="exact")
         results.append(entry)
 

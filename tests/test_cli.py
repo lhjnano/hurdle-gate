@@ -4,6 +4,7 @@ The original fixtures are left untouched (for the pristine-copy pattern, see run
 """
 
 import json
+import os
 import shutil
 import subprocess
 from pathlib import Path
@@ -82,6 +83,37 @@ def test_config_autodiscovery(tmp_path):
 
 def test_strict_returns_1_when_gap_exists():
     assert main(["scan", str(FIXTURES), "--strict"]) == 1
+
+
+def test_v020_marker_support_and_variant(tmp_path, capsys):
+    """v0.2.0 refinements on an isolated tree (cdpbrowser-style findings)."""
+    tree = os.path.join(os.path.dirname(__file__), "fixtures02")
+    out = tmp_path / "report.json"
+    assert main(["scan", str(tree), "--json", str(out)]) == 0
+    data = load_report(out)
+    by = {r["path"]: r for r in data["files"]}
+    # __init__.py is a package marker by default -> excluded, not a gap
+    assert by["pkg/__init__.py"]["status"] == "excluded"
+    assert "marker" in by["pkg/__init__.py"]["reason"]
+    # non-test .py under tests/ is test-support -> excluded
+    assert by["tests/helper_util.py"]["status"] == "excluded"
+    assert "support" in by["tests/helper_util.py"]["reason"]
+    # mod.py has no tests/test_mod.py, but tests/test_mod_extra.py is a
+    # variant name (test_{stem}_*.py) -> ok with that match reported
+    assert by["pkg/mod.py"]["status"] == "ok"
+    assert by["pkg/mod.py"]["matched_test"] == "tests/test_mod_extra.py"
+    assert data["summary"]["gap"] == 0
+
+
+def test_strict_init_config_reincludes_marker(tmp_path):
+    cfg = tmp_path / ".hurdle.json"
+    cfg.write_text(json.dumps({"strict_init": True}))
+    tree = os.path.join(os.path.dirname(__file__), "fixtures02")
+    assert main(["scan", str(tree), "--config", str(cfg), "--json",
+                 str(tmp_path / "r.json")]) == 0
+    data = load_report(tmp_path / "r.json")
+    by = {r["path"]: r for r in data["files"]}
+    assert by["pkg/__init__.py"]["status"] == "gap"  # re-treated as source
 
 
 def test_strict_returns_0_when_no_gap(tmp_path):

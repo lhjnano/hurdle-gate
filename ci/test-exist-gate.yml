@@ -47,15 +47,11 @@ jobs:
 
       - name: Install hurdle
         run: |
-          git clone --depth 1 --branch "$HURDLE_REF" "$HURDLE_REPO_URL" /tmp/hurdle
-          sudo install -m 0755 /tmp/hurdle/hurdle /usr/local/bin/hurdle
+          python3 -m pip install --quiet "git+$HURDLE_REPO_URL@$HURDLE_REF"
           hurdle scan --help >/dev/null
-        # Alternative A: to use hurdle via a local path reference instead of a
-        #   separate repo in the same org, delete the clone step above and run
-        #   the binary directly:
-        #     /path/to/hurdle/hurdle scan . ...
-        # Alternative B: a curl download (single executable) is also sufficient:
-        #   curl -fsSL "$HURDLE_RAW_URL/hurdle" -o /usr/local/bin/hurdle && chmod +x /usr/local/bin/hurdle
+        # Alternative: run from a clone without pip:
+        #   git clone --depth 1 --branch "$HURDLE_REF" "$HURDLE_REPO_URL" /tmp/hurdle
+        #   PYTHONPATH=/tmp/hurdle/src python3 -m hurdle scan . ...
 
       - name: Run hurdle gate (new/changed files only)
         # Legacy gaps committed to the baseline are ignored because --diff evaluates only new/changed files.

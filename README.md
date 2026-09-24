@@ -12,6 +12,20 @@
   별개의(그리고 훨씬 싼) 신호다.
 - 코드 **품질** 판정은 하지 않는다 — 테스트 파일이 존재해도 내용이 빈약하면 잡아내지 못한다.
 
+## 설치 (Install)
+
+```bash
+# 권장: pipx로 격리 설치
+pipx install .
+
+# 개발용: venv + 편집 가능 설치(dev 의존성 포함)
+python3 -m venv .venv && source .venv/bin/activate
+pip install -e .[dev]
+
+# pip을 쓸 수 없는 환경(PEP 668 등)에서는 설치 없이도 실행된다:
+PYTHONPATH=src python3 -m hurdle scan .
+```
+
 ## 빠른 시작
 
 ```bash
@@ -99,3 +113,7 @@ exec hurdle scan . --diff HEAD --strict
 - **escape hatch는 allowlist뿐이다.** 규칙이 잘못 판정하는 파일은 사유와 함께 allowlist에
   등록하는 것이 유일한 예외 경로다 — exclude로 숨기면 아예 스캔에서 사라져 갭 추적이
   끊긴다.
+
+## License
+
+Apache-2.0 — 전문은 [LICENSE](LICENSE) 파일 참조.

@@ -1,0 +1,8 @@
+{
+  "exclude": ["fixtures/"],
+  "allowlist": {
+    "src/hurdle/__init__.py": "패키지 마커(__version__ 상수)만 담는 파일",
+    "src/hurdle/__main__.py": "cli.main()에 위임하는 진입점 — main()은 tests/test_cli.py가 직접 검증",
+    "ci/pre-commit-hook.sh": "배포용 훅 템플릿 — 동등 경로는 run_smoke.sh가 실행해 검증"
+  }
+}

@@ -1,0 +1,28 @@
+name: ci
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: pip install -e .[dev]
+      - name: Unit tests
+        run: pytest -q
+      - name: Smoke
+        run: bash tests/run_smoke.sh
+      - name: Self-dogfood
+        # 자기 자신이 게이트를 통과해야 함 — tests/test_cli.py가 src/hurdle/cli.py의
+        # 테스트로 매핑되는 구조. 나머지 자기 갭은 루트 .hurdle.json으로 관리한다.
+        run: hurdle scan . --strict

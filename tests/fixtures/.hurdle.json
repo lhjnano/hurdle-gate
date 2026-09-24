@@ -1,0 +1,9 @@
+{
+  "exclude": ["excluded/"],
+  "allowlist": {
+    "py/lonely.py": "deliberately untested fixture"
+  },
+  "module_map": {
+    "mod3": ["zzz-marker"]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_doc": "kopia baseline config — tuned from full-scan sample verification (2026-09-24). Sources: ~/tools/hurdle/BASELINES.md",
+  "_doc2": "v2 note: multi-segment dir patterns like 'app/public/' are inert (exclude matches a single directory NAME only, trailing '/'); the 7 app/public/*.js files are allowlisted explicitly instead. baselines/kopia.json is the v1 snapshot (js gap=7); next run reports gap=41 (go only).",
+  "exclude": [
+    "*.pb.go",
+    "tests/",
+    "*.sh"
+  ],
+  "allowlist": {
+    "main.go": "repo entrypoint; no unit test by repo convention",
+    "internal/bigmap/bigmapbench/main.go": "benchmark harness command (bigmapbench)",
+    "internal/testutil/dockertestutil.go": "test-support package, exercised via other packages' tests",
+    "internal/testutil/norace.go": "test-support package (build-tag helper)",
+    "internal/testutil/race.go": "test-support package (build-tag helper)",
+    "internal/testutil/serverparameters.go": "test-support package",
+    "internal/testutil/testutil.go": "test-support package",
+    "internal/testutil/tmpdir.go": "test-support package",
+    "internal/servertesting/servertesting.go": "test-support package (server test harness)",
+    "internal/testlogging/ctx.go": "test-support package (test logging)",
+    "internal/testlogging/printf.go": "test-support package (test logging)",
+    "internal/indextest/indextest.go": "test-support package (index test fixtures)",
+    "internal/mockfs/mockfs.go": "test-support package (hand-written mock filesystem)",
+    "repo/manifest/testdata/manifests.go": "testdata fixture generator input",
+    "app/public/auto-launch.js": "Electron frontend entry; real UI tested in htmlui repo",
+    "app/public/config.js": "Electron frontend entry; real UI tested in htmlui repo",
+    "app/public/electron.js": "Electron frontend entry; real UI tested in htmlui repo",
+    "app/public/notifications.js": "Electron frontend entry; real UI tested in htmlui repo",
+    "app/public/preload.js": "Electron frontend entry; real UI tested in htmlui repo",
+    "app/public/server.js": "Electron frontend entry; real UI tested in htmlui repo",
+    "app/public/utils.js": "Electron frontend entry; real UI tested in htmlui repo"
+  }
+}

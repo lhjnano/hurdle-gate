@@ -1,0 +1,4 @@
+{
+  "exclude": ["vendor/", "k8s/pkg/client/*", "zz_generated*", "*_pb.go"],
+  "allowlist": {}
+}

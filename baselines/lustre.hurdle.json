@@ -1,0 +1,23 @@
+{
+  "_doc": "lustre baseline config — module-aggregated heuristic mode. Keywords verified against lustre/tests/*.sh + lustre/kunit/*.c content (2026-09-24). Sources: ~/tools/hurdle/BASELINES.md",
+  "exclude": [
+    "contrib/",
+    "*.h"
+  ],
+  "allowlist": {
+    "autogen.sh": "autotools bootstrap script, not product code"
+  },
+  "module_map": {
+    "lustre/osd-zfs": ["osd-zfs", "osd", "conf-sanity", "sanity"],
+    "lustre/osd-ldiskfs": ["osd-ldiskfs", "ldiskfs", "osd"],
+    "lustre/mdt": ["mdt"],
+    "lustre/mgs": ["mgs"],
+    "lustre/mdc": ["mdc"],
+    "lustre/osc": ["osc"],
+    "lustre/llite": ["llite"],
+    "lustre/lov": ["lov"],
+    "lustre/obdclass": ["obdclass", "obd"],
+    "lustre/ldlm": ["ldlm"],
+    "lustre/ptlrpc": ["ptlrpc"]
+  }
+}

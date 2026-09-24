@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hurdle"
+version = "0.1.0"
+description = "소스↔테스트 파일 존재 매핑 정적 분석 게이트 (source↔test existence gate)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+keywords = ["testing", "test-coverage", "static-analysis", "ci", "quality-gate"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Quality Assurance",
+    "Development Status :: 4 - Beta",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+hurdle = "hurdle.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["hurdle"]

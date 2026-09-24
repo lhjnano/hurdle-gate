@@ -1,0 +1,24 @@
+{
+  "exclude": [
+    "vendor/",
+    "node_modules/",
+    "examples/",
+    "docs/",
+    "site/",
+    "third_party/",
+    "**/*_pb.go",
+    "**/*_zz_generated*.go",
+    "**/*.pb.cc",
+    "**/*.pb.h",
+    "**/*_pb2.py"
+  ],
+  "allowlist": {
+    "cmd/legacytool/main.go": "thin CLI wrapper; logic is covered by pkg/",
+    "internal/migration/oneoff.py": "one-off migration script, not shipped"
+  },
+  "module_map": {
+    "c/src/osd": ["osd", "conf-sanity"],
+    "mds": ["mds", "sanity.sh"],
+    "lustre/lustre/ldlm": ["ldlm", "replay"]
+  }
+}

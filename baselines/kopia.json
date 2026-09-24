@@ -1,0 +1,6190 @@
+{
+  "path": "/home/lhjnano/study/kopia",
+  "generated_at": "2026-09-23T22:54:17.839484+00:00",
+  "mode": "full",
+  "base": null,
+  "config": "/home/lhjnano/tools/hurdle/baselines/kopia.hurdle.json",
+  "summary": {
+    "total": 876,
+    "ok": 601,
+    "gap": 41,
+    "unmapped": 145,
+    "excluded": 68,
+    "allowed": 21,
+    "by_lang": {
+      "js": {
+        "ok": 0,
+        "gap": 0,
+        "excluded": 0,
+        "allowed": 7
+      },
+      "go": {
+        "ok": 601,
+        "gap": 41,
+        "excluded": 55,
+        "allowed": 14
+      },
+      "c": {
+        "ok": 0,
+        "gap": 0,
+        "excluded": 13,
+        "allowed": 0
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "BUILD.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "GOVERNANCE.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "LICENSE",
+      "lang": "",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "Makefile",
+      "lang": "",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "README.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/Makefile",
+      "lang": "",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/README.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/assets/icon.icns",
+      "lang": "icns",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/assets/icon.ico",
+      "lang": "ico",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/entitlements.mac.plist",
+      "lang": "plist",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/kopia-ui.apparmor",
+      "lang": "apparmor",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/notarize.mjs",
+      "lang": "mjs",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/package-lock.json",
+      "lang": "json",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/package.json",
+      "lang": "json",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/public/auto-launch.js",
+      "lang": "js",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "Electron frontend entry; real UI tested in htmlui repo"
+    },
+    {
+      "path": "app/public/config.js",
+      "lang": "js",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "Electron frontend entry; real UI tested in htmlui repo"
+    },
+    {
+      "path": "app/public/electron.js",
+      "lang": "js",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "Electron frontend entry; real UI tested in htmlui repo"
+    },
+    {
+      "path": "app/public/favicon.ico",
+      "lang": "ico",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/public/index.html",
+      "lang": "html",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/public/logo192.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/public/logo512.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/public/manifest.json",
+      "lang": "json",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/public/notifications.js",
+      "lang": "js",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "Electron frontend entry; real UI tested in htmlui repo"
+    },
+    {
+      "path": "app/public/preload.js",
+      "lang": "js",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "Electron frontend entry; real UI tested in htmlui repo"
+    },
+    {
+      "path": "app/public/robots.txt",
+      "lang": "txt",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/public/server.js",
+      "lang": "js",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "Electron frontend entry; real UI tested in htmlui repo"
+    },
+    {
+      "path": "app/public/utils.js",
+      "lang": "js",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "Electron frontend entry; real UI tested in htmlui repo"
+    },
+    {
+      "path": "app/resources/linux/icons/kopia-tray.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/resources/mac/icons/kopiaTrayTemplate.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/resources/mac/icons/kopiaTrayTemplate@2x.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/resources/win/icons/kopia-tray.ico",
+      "lang": "ico",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "app/sign.mjs",
+      "lang": "mjs",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "build-status.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "build_architecture.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/app.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/auto_upgrade.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/cli_progress.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_acl.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_acl_add.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_acl_delete.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_acl_enable.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_acl_list.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_benchmark.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_benchmark_compression.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_benchmark_crypto.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_benchmark_ecc.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_benchmark_encryption.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_benchmark_hashing.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_benchmark_splitters.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_blob.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_blob_delete.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_blob_gc.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_blob_list.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_blob_shards.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_blob_shards_modify.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_blob_shards_modify_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_blob_show.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_blob_show_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_blob_stats.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_cache.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_cache_clear.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_cache_info.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_cache_prefetch.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_cache_set.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_cache_set_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_cache_sync.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_cache_sync_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_content.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_content_delete.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_content_list.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_content_range_flags.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_content_rewrite.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_content_show.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_content_stats.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_content_verify.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_content_verify_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_diff.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_index.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_index_epoch.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_index_epoch_list.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_index_inspect.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_index_inspect_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_index_list.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_index_optimize.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_index_recover.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_logs.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_logs_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_logs_cleanup.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_logs_list.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_logs_session.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_logs_show.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_ls.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_maintenance.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_maintenance_info.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_maintenance_info_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_maintenance_run.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_maintenance_set.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_maintenance_set_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_manifest.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_manifest_delete.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_manifest_ls.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_manifest_show.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_mount.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_configure_common.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_configure_email.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_configure_pushover.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_configure_testsender.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_configure_webhook.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_profile.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_notification_profile_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_profile_configure.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_profile_delete.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_profile_list.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_profile_send.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_profile_show.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_template.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_notification_template_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_template_list.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_template_remove.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_template_set.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_notification_template_show.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_edit.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_export.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_policy_export_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_import.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_policy_import_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_ls.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_remove.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_set.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_policy_set_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_set_actions.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_set_compression.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_set_error_handling.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_set_files.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_set_logging.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_policy_set_logging_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_set_os_snapshot.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_policy_set_os_snapshot_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_set_retention.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_set_scheduling.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_set_splitter.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_policy_set_splitter_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_set_upload.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_policy_set_upload_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_policy_show.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_change_password.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_repository_change_password_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_connect.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_connect_from_config.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_connect_server.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_create.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_repository_create_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_disconnect.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_repair.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_set_client.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_set_parameters.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_repository_set_parameters_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_status.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_sync.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_throttle.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_throttle_get.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_throttle_set.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_upgrade.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_repository_upgrade_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_repository_validate_provider.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_restore.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_restore_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server_cancel.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server_flush.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server_pause.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server_refresh.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server_resume.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server_shutdown.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server_snapshot.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server_source_manager_action.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server_start.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server_status.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server_throttle.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server_throttle_get.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server_throttle_set.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_server_tls.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_session.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_session_list.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_show.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_snapshot.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_snapshot_copy_move_history.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_snapshot_create.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_snapshot_delete.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_snapshot_estimate.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_snapshot_estimate_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_snapshot_expire.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_snapshot_fix.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_snapshot_fix_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_snapshot_fix_invalid_files.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_snapshot_fix_remove_files.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_snapshot_list.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_snapshot_list_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_snapshot_migrate.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_snapshot_pin.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_snapshot_pin_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_snapshot_restore.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_snapshot_verify.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_snapshot_verify_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_user.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_user_add_set.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_user_delete.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_user_hash_password.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_user_hash_password_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_user_info.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/command_user_list.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/config.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/error_notifications.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/inproc.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/json_output.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/observability_flags.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "observability_flags_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/password.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/password_darwin.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/password_linux.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/password_other.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/password_windows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/profile.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/restore_progress.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/show_utils.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/sighup_unix.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/sighup_windows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/storage_azure.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/storage_b2.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/storage_filesystem.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/storage_gcs.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/storage_gdrive.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/storage_providers.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/storage_rclone.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/storage_s3.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "storage_s3_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/storage_sftp.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "storage_sftp_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/storage_webdav.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/throttle_get.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/throttle_set.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "cli/update_check.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "command_benchmark_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/cachefs/cache.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/cachefs/cachefs.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/doc.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "entry_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/entry.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "entry_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/entry_dir_iterator.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "entry_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/ignorefs/ignorefs.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "ignorefs_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/localfs/doc.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "local_fs_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/localfs/local_fs.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "local_fs_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/localfs/local_fs_32bit.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "local_fs_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/localfs/local_fs_64bit.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "local_fs_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/localfs/local_fs_nonwindows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "local_fs_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/localfs/local_fs_os.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "local_fs_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/localfs/local_fs_pool.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "local_fs_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/localfs/local_fs_windows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "local_fs_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/localfs/shallow_fs.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "local_fs_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/localfs/shallowentry.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "local_fs_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/loggingfs/loggingfs.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/utc_timestamp.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "utc_timestamp_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "fs/virtualfs/virtualfs.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "virtualfs_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "go.mod",
+      "lang": "mod",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "go.sum",
+      "lang": "sum",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/convert.sh",
+      "lang": "c",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-1024.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-app-1024.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-app-1024.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-app-dark-1024.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-app-dark-1024.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-app-win-1024.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-app-win-1024.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-mac-tray.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-outline-1024.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-outline-1024.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-outline-win-tray.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-outline-win-tray.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-white.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-win-1024.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia-win-1024.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "icons/kopia.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/acl/access_level.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "access_level_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/acl/acl.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "access_level_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/acl/acl_manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "acl_manager_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/apiclient/apiclient.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/atomicfile/atomicfile.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/auth/authn.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "authn_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/auth/authn_repo.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "authn_repo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/auth/authz.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "authz_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/auth/authz_acl.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "authn_repo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/bigmap/bigmap_internal.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "bigmap_internal_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/bigmap/bigmap_map.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "bigmap_map_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/bigmap/bigmap_set.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "bigmap_set_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/bigmap/bigmapbench/main.go",
+      "lang": "go",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "benchmark harness command (bigmapbench)"
+    },
+    {
+      "path": "internal/blobcrypto/blob_crypto.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "blob_crypto_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/blobcrypto/static_crypter.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "blob_crypto_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/blobparam/blobid_params.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/blobtesting/asserts.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "map_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/blobtesting/cleanup.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "map_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/blobtesting/concurrent.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "map_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/blobtesting/doc.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "map_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/blobtesting/eventually_consistent.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "map_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/blobtesting/faulty.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "map_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/blobtesting/map.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "map_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/blobtesting/object_locking_map.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "object_locking_map_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/blobtesting/storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "map_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/blobtesting/verify.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "map_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/cache/cache_metrics.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "cache_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/cache/cache_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "cache_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/cache/content_cache.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "content_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/cache/content_cache_passthrough.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "cache_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/cache/mutex_map.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "mutex_map_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/cache/persistent_lru_cache.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "persistent_lru_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/cachedir/cachedir.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/cacheprot/storage_protection.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "storage_protection_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/clock/now.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "sleep_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/clock/now_prod.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "sleep_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/clock/now_testing.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "sleep_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/clock/sleep.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "sleep_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/completeset/complete_set.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "complete_set_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/connection/reconnector.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "reconnector_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/contentlog/contentlog_json_writer.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "contentlog_json_writer_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/contentlog/contentlog_logger.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "contentlog_logger_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/contentlog/logparam/logparam.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "logparam_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/contentparam/contentid_params.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/crypto/aesgcm.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "key_derivation_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/crypto/key_derivation.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "key_derivation_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/crypto/pb_key_deriver_insecure_testing.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "key_derivation_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/crypto/pb_key_deriver_pbkdf2.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "key_derivation_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/crypto/pb_key_deriver_scrypt.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "key_derivation_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/crypto/pb_key_derivers.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "key_derivation_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/diff/diff.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "diff_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/dirutil/mksubdirall.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "mssubdirall_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/editor/editor.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/epoch/epoch_advance.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "epoch_advance_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/epoch/epoch_manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "epoch_manager_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/epoch/epoch_range.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "epoch_range_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/epoch/epoch_utils.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "epoch_utils_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/faketime/faketime.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "faketime_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/fault/fault.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/fault/fault_set.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/feature/feature.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "feature_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/freepool/freepool.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "freepool_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/fshasher/fshasher.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "fshasher_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/fusemount/fusefs.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/gather/gather_bytes.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "gather_bytes_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/gather/gather_write_buffer.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "gather_write_buffer_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/gather/gather_write_buffer_chunk.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "gather_write_buffer_chunk_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/grpcapi/Makefile",
+      "lang": "",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/grpcapi/repository_server.pb.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/grpcapi/repository_server.proto",
+      "lang": "proto",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/grpcapi/repository_server_grpc.pb.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/hmac/hmac.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/impossible/impossible.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "impossible_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/indextest/indextest.go",
+      "lang": "go",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "test-support package (index test fixtures)"
+    },
+    {
+      "path": "internal/insecureserverbind/insecureserverbind.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "insecureserverbind_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/iocopy/iocopy.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "iocopy_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/iomem/iomem_linux.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "iomem_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/iomem/iomem_others.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "iomem_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/listcache/listcache.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "listcache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/logfile/logfile.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "logfile_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/metricid/id_mapping.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "id_mapping_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/metricid/metricid.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "metricid_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/metrics/metrics_aggregation.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "metrics_aggregation_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/metrics/metrics_counter.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "metrics_counter_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/metrics/metrics_distribution.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "metrics_distribution_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/metrics/metrics_registry.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "metrics_registry_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/metrics/metrics_thresholds.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "metric_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/metrics/metrics_throughput.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "metrics_throughput_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/metrics/metrics_timeseries.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "metrics_timeseries_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/metrics/metrics_timeseries_counter.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "metric_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/metrics/metrics_timeseries_durations.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "metric_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/metrics/metrics_timeseries_sizes.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "metric_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/metrics/metrics_timeseries_timeres.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "metrics_timeseries_timeres_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/metrics/prom_cache.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "metric_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/mockfs/mockfs.go",
+      "lang": "go",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "test-support package (hand-written mock filesystem)"
+    },
+    {
+      "path": "internal/mount/mount.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/mount/mount_fuse.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/mount/mount_net_use.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/mount/mount_posix_webdav_helper.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/mount/mount_posix_webdav_helper_darwin.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/mount/mount_posix_webdav_helper_linux.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/mount/mount_unsupported.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/mount/mount_webdav.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/osexec/osexec.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "osexec_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/osexec/osexec_unix.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "osexec_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/osexec/osexec_windows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "osexec_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/ospath/ospath.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "ospath_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/ospath/ospath_darwin.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "ospath_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/ospath/ospath_nonwindows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "ospath_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/ospath/ospath_openbsd.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "ospath_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/ospath/ospath_windows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "ospath_windows_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/ospath/ospath_xdg.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "ospath_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/ownwrites/ownwrites.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "ownwrites_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/parallelwork/parallel_work_queue.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "parallel_work_queue_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/passwordpersist/passwordpersist.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/passwordpersist/passwordpersist_file.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/passwordpersist/passwordpersist_keyring.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/passwordpersist/passwordpersist_multiple.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/passwordpersist/passwordpersist_none.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/providervalidation/providervalidation.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "providervalidation_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/releasable/releaseable_tracker.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "releaseable_tracker_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/repodiag/blob_writer.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "blob_writer_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/repodiag/log_manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "log_manager_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/repotesting/reconnectable_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "repotesting_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/repotesting/repotesting.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "repotesting_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/retry/retry.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "retry_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/scheduler/scheduler.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "scheduler_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/scrubber/scrub_sensitive.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "scrub_sensitive_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_cli.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_cli_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_error.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_cli_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_estimate.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_cli_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_mount.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_cli_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_notification_profile.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_notification_profile_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_object_get.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_cli_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_paths.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_paths_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_policies.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_policies_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_repo.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_cli_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_restore.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_restore_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_snapshots.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_snapshots_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_sources.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_sources_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_tasks.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_cli_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_ui_pref.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_ui_pref_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/api_user.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_cli_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/grpc_session.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_cli_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/htmlui_embed.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_cli_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/htmlui_fallback.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_cli_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/index.html",
+      "lang": "html",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/request_context.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_cli_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/server.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "server_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/server_authz_checks.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "server_authz_checks_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/server_maintenance.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "server_maintenance_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/server_mount_manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_cli_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/server/source_manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "api_cli_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/serverapi/client_wrappers.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/serverapi/serverapi.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/servertesting/servertesting.go",
+      "lang": "go",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "test-support package (server test harness)"
+    },
+    {
+      "path": "internal/sleepable/sleepable_timer.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "sleepable_timer_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/sparsefile/sparsefile.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "sparsefile_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/stat/stat_bsd.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "stat_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/stat/stat_unix.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "stat_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/stat/stat_windows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "stat_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/stats/count_map.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "count_map_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/stats/countsum.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "count_map_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/tempfile/tempfile.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "tempfile_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/tempfile/tempfile_linux.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "tempfile_linux_fallback_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/tempfile/tempfile_unix_fallback.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "tempfile_linux_fallback_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/tempfile/tempfile_unix_nonlinux.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "tempfile_linux_fallback_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/tempfile/tempfile_windows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "tempfile_linux_fallback_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/testlogging/ctx.go",
+      "lang": "go",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "test-support package (test logging)"
+    },
+    {
+      "path": "internal/testlogging/printf.go",
+      "lang": "go",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "test-support package (test logging)"
+    },
+    {
+      "path": "internal/testutil/dockertestutil.go",
+      "lang": "go",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "test-support package, exercised via other packages' tests"
+    },
+    {
+      "path": "internal/testutil/norace.go",
+      "lang": "go",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "test-support package (build-tag helper)"
+    },
+    {
+      "path": "internal/testutil/race.go",
+      "lang": "go",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "test-support package (build-tag helper)"
+    },
+    {
+      "path": "internal/testutil/serverparameters.go",
+      "lang": "go",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "test-support package"
+    },
+    {
+      "path": "internal/testutil/testutil.go",
+      "lang": "go",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "test-support package"
+    },
+    {
+      "path": "internal/testutil/tmpdir.go",
+      "lang": "go",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "test-support package"
+    },
+    {
+      "path": "internal/timestampmeta/timestampmeta.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "timestampmeta_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/timetrack/estimator.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/timetrack/throttle.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/timetrack/timer.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/tlsutil/tlsutil.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "tlsutil_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/uitask/uitask.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "uitask_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/uitask/uitask_counter.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "uitask_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/uitask/uitask_manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "uitask_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/units/units.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "units_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/user/hash_password.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "hash_password_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/user/password_hashing_version.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "hash_password_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/user/password_hashings.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "password_hashings_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/user/user_manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "user_manager_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/user/user_profile.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "user_profile_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/user/user_profile_pw_hash.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "hash_password_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/volumesizeinfo/volume_size_info.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/volumesizeinfo/volume_size_info_common.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/volumesizeinfo/volume_size_info_openbsd.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/volumesizeinfo/volume_size_info_windows.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/wcmatch/rune_scanner.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "wcmatch_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/wcmatch/tokens.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "wcmatch_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/wcmatch/wcmatch.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "wcmatch_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/webdavmount/webdavmount.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/workshare/workshare_pool.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "workshare_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/workshare/workshare_waitgroup.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "workshare_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "internal/zaplogutil/zaplogutil.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "main.go",
+      "lang": "go",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "repo entrypoint; no unit test by repo convention"
+    },
+    {
+      "path": "notification/notification_send.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifydata/doc.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "empty_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifydata/empty.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "empty_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifydata/error_info.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "error_info_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifydata/multi_snapshot_status.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "multi_snapshot_status_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifydata/typed_event_args.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "typed_event_args_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifyprofile/notification_profile.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/embeddedtemplate.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "notifytemplate_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/generic-error.html",
+      "lang": "html",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/generic-error.txt",
+      "lang": "txt",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/repotemplate.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "notifytemplate_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/snapshot-report.html",
+      "lang": "html",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/snapshot-report.txt",
+      "lang": "txt",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/test-notification.html",
+      "lang": "html",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/test-notification.txt",
+      "lang": "txt",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/testdata/generic-error.html.alt.expected",
+      "lang": "expected",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/testdata/generic-error.html.default.expected",
+      "lang": "expected",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/testdata/generic-error.txt.alt.expected",
+      "lang": "expected",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/testdata/generic-error.txt.default.expected",
+      "lang": "expected",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/testdata/snapshot-report.html.alt.expected",
+      "lang": "expected",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/testdata/snapshot-report.html.default.expected",
+      "lang": "expected",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/testdata/snapshot-report.html.success.expected",
+      "lang": "expected",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/testdata/snapshot-report.txt.alt.expected",
+      "lang": "expected",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/testdata/snapshot-report.txt.default.expected",
+      "lang": "expected",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/notifytemplate/testdata/snapshot-report.txt.success.expected",
+      "lang": "expected",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/sender/email/email_sender.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "email_sender_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/sender/email/email_sender_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "email_sender_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/sender/jsonsender/jsonsender.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "jsonsender_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/sender/notification_message.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "notification_message_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/sender/pushover/pushover_sender.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "pushover_sender_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/sender/pushover/pushover_sender_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "pushover_sender_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/sender/sender.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "notification_message_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/sender/sender_config.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "notification_message_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/sender/testsender/test_sender.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "test_sender_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/sender/testsender/test_sender_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "test_sender_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/sender/webhook/webhook_sender.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "webhook_sender_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "notification/sender/webhook/webhook_sender_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "webhook_sender_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/api_server_repository.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "buildinfo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/azure/azure_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "azure_immu_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/azure/azure_pit.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "azure_immu_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/azure/azure_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "azure_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/azure/azure_versioned.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "azure_versioned_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/b2/b2_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "b2_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/b2/b2_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "b2_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/beforeop/beforeop.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "beforeop_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/config.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "registry_edge_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/doc.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "registry_edge_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/filesystem/filesystem_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "filesystem_storage_sync_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/filesystem/filesystem_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "filesystem_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/filesystem/filesystem_storage_capacity_openbsd.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "filesystem_storage_sync_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/filesystem/filesystem_storage_capacity_unix.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "filesystem_storage_sync_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/filesystem/filesystem_storage_capacity_windows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "filesystem_storage_sync_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/filesystem/osinterface.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "filesystem_storage_sync_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/filesystem/osinterface_realos.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "filesystem_storage_sync_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/filesystem/osinterface_realos_other.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "filesystem_storage_sync_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/filesystem/osinterface_realos_unix.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "filesystem_storage_sync_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/gcs/gcs_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "gcs_immu_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/gcs/gcs_pit.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "gcs_immu_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/gcs/gcs_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "gcs_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/gcs/gcs_versioned.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "gcs_versioned_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/gdrive/file_id_cache.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "gdrive_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/gdrive/gdrive_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "gdrive_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/gdrive/gdrive_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "gdrive_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/logging/logging_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "logging_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/rclone/rclone_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "rclone_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/rclone/rclone_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "rclone_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/readonly/readonly_storage.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/registry.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "registry_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/retrying/retrying_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "retrying_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/s3/s3_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "s3_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/s3/s3_pit.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "s3_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/s3/s3_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "s3_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/s3/s3_storage_config.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "s3_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/s3/s3_versioned.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "s3_versioned_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/sftp/sftp_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "sftp_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/sftp/sftp_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "sftp_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/sharded/sharded.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "sharded_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/sharded/sharded_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "sharded_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/sharded/sharded_parameters.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "sharded_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/storagemetrics/storage_metrics.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "storage_metrics_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/throttling/throttler.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "throttler_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/throttling/throttling_semaphore.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "throttling_semaphore_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/throttling/throttling_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "throttling_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/throttling/token_bucket.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "token_bucket_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/webdav/webdav_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "webdav_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/blob/webdav/webdav_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "webdav_storage_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/buildinfo.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "buildinfo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/caching.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "buildinfo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/compression/compression_ids.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "compressor_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/compression/compressor.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "compressor_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/compression/compressor_deflate.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "compressor_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/compression/compressor_gzip.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "compressor_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/compression/compressor_lz4.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "compressor_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/compression/compressor_pgzip.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "compressor_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/compression/compressor_s2.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "compressor_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/compression/compressor_zstd.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "compressor_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/connect.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "buildinfo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/caching_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/committed_content_index.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/committed_content_index_disk_cache.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/committed_content_index_disk_cache_unix.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/committed_content_index_disk_cache_windows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/committed_content_index_mem_cache.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/committed_read_manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/content_index_recovery.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "content_index_recovery_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/content_manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "content_manager_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/content_manager_indexes.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/content_manager_iterate.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/content_manager_lock_free.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/content_manager_metrics.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/content_prefetch.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/content_reader.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/index/content_id_to_bytes.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "id_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/index/id.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "id_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/index/id_range.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "id_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/index/index.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "id_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/index/index_builder.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "id_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/index/index_encode_util.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "id_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/index/index_v1.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "id_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/index/index_v2.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "id_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/index/info.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "id_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/index/merged.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "merged_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/index/one_use_index_builder.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "id_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/indexblob/index_blob.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "index_blob_encryption_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/indexblob/index_blob_encryption.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "index_blob_encryption_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/indexblob/index_blob_manager_v0.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "index_blob_manager_v0_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/indexblob/index_blob_manager_v1.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "index_blob_encryption_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/info.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/sessions.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "sessions_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/stats.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "committed_content_index_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/verify.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "verify_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/content/write_temp_file.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "write_temp_file_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/doc.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "buildinfo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/ecc/ecc.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "ecc_rs_crc_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/ecc/ecc_options.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "ecc_rs_crc_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/ecc/ecc_rs_crc.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "ecc_rs_crc_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/ecc/ecc_utils.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "ecc_utils_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/encryption/aead_helpers.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "encryption_concurrent_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/encryption/aes256_gcm_hmac_sha256_encryptor.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "encryption_concurrent_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/encryption/chacha20_poly1305_hmac_sha256_encryptor.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "encryption_concurrent_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/encryption/encryption.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "encryption_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/blobcfg_blob.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "format_blob_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/content_format.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "format_blob_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/encryptor_wrapper.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "format_blob_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/format_blob.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "format_blob_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/format_blob_cache.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "format_blob_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/format_blob_key_derivation_nontesting.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "format_blob_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/format_blob_key_derivation_testing.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "format_blob_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/format_change_password.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "format_blob_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/format_manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "format_manager_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/format_provider.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "format_blob_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/format_set_parameters.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "format_blob_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/object_format.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "format_blob_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/repository_config.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "format_blob_cache_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/upgrade_lock.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "upgrade_lock_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/format/upgrade_lock_intent.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "upgrade_lock_intent_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/grpc_repository_client.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "grpc_repository_client_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/hashing/blake3_hashes.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "hashing_edge_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/hashing/blake_hashes.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "hashing_edge_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/hashing/hashing.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "hashing_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/hashing/sha_hashes.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "hashing_edge_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/initialize.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "buildinfo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/jsonencoding/jsonencoding.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "jsonencoding_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/local_config.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "local_config_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/locking_storage.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "buildinfo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/logging/broadcast.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "logging_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/logging/ctx.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "logging_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/logging/logging.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "logging_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/logging/null_logger.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "logging_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenance/blob_retain.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "blob_retain_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenance/cleanup_logs.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "cleanup_logs_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenance/content_index_to_pack_check.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "blob_retain_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenance/content_rewrite.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "content_rewrite_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenance/drop_deleted_contents.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "blob_retain_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenance/index_compaction.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "blob_retain_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenance/maintenance_params.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "maintenance_params_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenance/maintenance_run.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "maintenance_run_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenance/maintenance_safety.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "maintenance_safety_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenance/maintenance_schedule.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "maintenance_schedule_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenance/pack_gc.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "pack_gc_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenancestats/builder.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenancestats/stats_advance_epoch.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenancestats/stats_clean_up_log.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenancestats/stats_cleanup_markers.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenancestats/stats_cleanup_superseded_indexes.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenancestats/stats_compact_indexes.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenancestats/stats_compact_single_epoch.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenancestats/stats_delete_unreferenced_packs.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenancestats/stats_extend_blob_retention.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenancestats/stats_generate_range_checkpoint.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenancestats/stats_rewrite_contents.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenancestats/stats_snapshot_gc.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/maintenancestats/typeconversion.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "typeconversion_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/manifest/committed_manifest_manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "manifest_concurrent_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/manifest/manifest_entry.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "manifest_entry_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/manifest/manifest_manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "manifest_manager_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/manifest/serialized.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "serialized_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/manifest/testdata/manifests.go",
+      "lang": "go",
+      "status": "allowed",
+      "matched_test": null,
+      "confidence": "exact",
+      "reason": "testdata fixture generator input"
+    },
+    {
+      "path": "repo/object/indirect.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "object_chunk_fault_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/object/object_manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "object_manager_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/object/object_reader.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "object_chunk_fault_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/object/object_writer.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "object_chunk_fault_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/object/objectid.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "objectid_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/open.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "buildinfo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/recently_read.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "buildinfo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/refcount_closer.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "buildinfo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/repository.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "repository_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/server_repo_cache_enc_key.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "buildinfo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/server_repository_params.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "buildinfo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/splitter/splitter.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "splitter_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/splitter/splitter_buzhash32.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "splitter_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/splitter/splitter_fixed.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "splitter_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/splitter/splitter_pool.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "splitter_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/splitter/splitter_rabinkarp64.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "splitter_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/token.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "buildinfo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "repo/userhost.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "buildinfo_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "site/AGENTS.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/Makefile",
+      "lang": "",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/archetypes/default.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/assets/icons/logo.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/assets/scss/_variables_project.scss",
+      "lang": "scss",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/CNAME",
+      "lang": "",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/_index.html",
+      "lang": "html",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Actions/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Architecture/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Architecture/architecture.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Architecture/architecture.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Caching/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Compatibility/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Compression/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Compression/s2_vs_pgzip.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Consistency/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/ECC/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Encryption/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Kopiaignore/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Logging/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Maintenance/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Ransomware Protection/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Sharding/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Storage Tiers/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/Synchronization/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Advanced/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Contribution guidelines/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/FAQs/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Features/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Getting started/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Installation/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Mounting/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Privacy Policy/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Reference/Command-Line/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Reference/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Release Notes/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Repositories/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Repositories/drive-create-credentials.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Repositories/drive-create-key.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Repositories/drive-create-project.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Repositories/drive-enable-api.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Repository Server/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/Upgrade/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/docs/_index.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/featured-background.jpg",
+      "lang": "jpg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/search.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/content/signing-key",
+      "lang": "",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/go.mod",
+      "lang": "mod",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/go.sum",
+      "lang": "sum",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/hugo.toml",
+      "lang": "toml",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/layouts/partials/favicons.html",
+      "lang": "html",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/layouts/partials/hooks/body-end.html",
+      "lang": "html",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/layouts/partials/hooks/head-end.html",
+      "lang": "html",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/layouts/partials/navbar.html",
+      "lang": "html",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/layouts/partials/page-meta-links.html",
+      "lang": "html",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/layouts/partials/search-input.html",
+      "lang": "html",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/package-lock.json",
+      "lang": "json",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/package.json",
+      "lang": "json",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/static/favicons/android-chrome-192x192.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/static/favicons/android-chrome-512x512.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/static/favicons/apple-touch-icon.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/static/favicons/browserconfig.xml",
+      "lang": "xml",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/static/favicons/favicon-16x16.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/static/favicons/favicon-32x32.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/static/favicons/favicon.ico",
+      "lang": "ico",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/static/favicons/mstile-150x150.png",
+      "lang": "png",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/static/favicons/safari-pinned-tab.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "site/static/favicons/site.webmanifest",
+      "lang": "webmanifest",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "snapshot_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/manifest.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "snapshot_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/actions_policy.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "error_handling_policy_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/compression_policy.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "error_handling_policy_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/error_handling_policy.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "error_handling_policy_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/expire.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "error_handling_policy_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/files_policy.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "error_handling_policy_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/log_detail.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "log_detail_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/logging_policy.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "error_handling_policy_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/optional.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "error_handling_policy_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/os_snapshot_policy.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "os_snapshot_policy_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/policy.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "error_handling_policy_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/policy_manager.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "policy_manager_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/policy_merge.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "policy_merge_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/policy_tree.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "policy_tree_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/retention_policy.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "retention_policy_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/scheduling_policy.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "scheduling_policy_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/splitter_policy.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "error_handling_policy_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/policy/upload_policy.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "error_handling_policy_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/restore/local_fs_output.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "restore_overwrite_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/restore/local_fs_output_darwin.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "restore_overwrite_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/restore/local_fs_output_unix.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "restore_overwrite_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/restore/local_fs_output_windows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "restore_overwrite_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/restore/long_paths_plan9.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "restore_overwrite_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/restore/long_paths_unix.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "restore_overwrite_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/restore/long_paths_windows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "restore_overwrite_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/restore/restore.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "restore_overwrite_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/restore/shallow_fs_output.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "restore_overwrite_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/restore/shallow_helper.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "shallow_helper_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/restore/tar_output.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "restore_overwrite_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/restore/zip_output.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "restore_overwrite_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/snapshotfs/all_sources.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "dir_manifest_builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/snapshotfs/dir_manifest_builder.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "dir_manifest_builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/snapshotfs/dir_reader.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "dir_manifest_builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/snapshotfs/dir_rewriter.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "dir_manifest_builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/snapshotfs/dir_writer.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "dir_manifest_builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/snapshotfs/objref.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "dir_manifest_builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/snapshotfs/repofs.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "dir_manifest_builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/snapshotfs/snapshot_storage_stats.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "snapshot_storage_stats_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/snapshotfs/snapshot_tree_walker.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "snapshot_tree_walker_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/snapshotfs/snapshot_verifier.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "snapshot_verifier_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/snapshotfs/source_directories.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "source_directories_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/snapshotfs/source_snapshots.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "dir_manifest_builder_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/snapshotgc/gc.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/snapshotmaintenance/snapshotmaintenance.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "snapshotmaintenance_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/source.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "snapshot_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/stats.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "stats_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/upload/checkpoint_registry.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "checkpoint_registry_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/upload/estimate.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "estimate_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/upload/upload.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "upload_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/upload/upload_actions.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "cancel_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/upload/upload_estimator.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "upload_estimator_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/upload/upload_os_snapshot_nonwindows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "cancel_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/upload/upload_os_snapshot_windows.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "cancel_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/upload/upload_progress.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "cancel_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "snapshot/upload/upload_scan.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "cancel_r15_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/clitestutil/clitestutil.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/perf_benchmark/process_results.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/recovery/blobmanipulator/blobmanipulator.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/repository_stress_test/repomodel/open_repository_model.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/repository_stress_test/repomodel/repository_data_model.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/repository_stress_test/repomodel/repository_session_model.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/repository_stress_test/repomodel/tracking_set.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/checker/checker.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/engine/action.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/engine/engine.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/engine/log.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/engine/metadata.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/engine/stats.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/errors.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/filewriter.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/fiofilewriter/fio_filewriter.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/multiclient_test/README.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/multiclient_test/framework/client.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/multiclient_test/framework/filewriter.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/multiclient_test/framework/framework.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/multiclient_test/framework/harness.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/multiclient_test/framework/snapshotter.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/multiclient_test/multiclient-diagram.svg",
+      "lang": "svg",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/multiclient_test/storagestats/storage_stats.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/options.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/pathlock/path_lock.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/persister.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/snapmeta/index.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/snapmeta/kopia_connector.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/snapmeta/kopia_persister.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/snapmeta/kopia_persister_light.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/snapmeta/kopia_snapshotter.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/snapmeta/simple.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/robustness/snapshotter.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/testdirtree/testdirtree.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/testenv/cli_exe_runner.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/testenv/cli_inproc_runner.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/testenv/cli_test_env.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/testenv/faketimeserver.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/testenv/storage_inmemory.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/testingaction/main.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/tools/fio/config.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/tools/fio/fio.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/tools/fio/job.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/tools/fio/options.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/tools/fio/workload.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/tools/fswalker/fswalker.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/tools/fswalker/protofile/protofile.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/tools/fswalker/reporter/reporter.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/tools/fswalker/walker/walker.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/tools/kopiaclient/kopiaclient.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/tools/kopiarunner/kopia_snapshotter.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/tools/kopiarunner/kopiarun.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/tools/kopiarunner/setpdeath.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tests/tools/kopiarunner/setpdeath_linux.go",
+      "lang": "go",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/apt-publish.sh",
+      "lang": "c",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/cli2md/cli2md.go",
+      "lang": "go",
+      "status": "ok",
+      "matched_test": "cli2md_test.go",
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/docker-publish.sh",
+      "lang": "c",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/docker/Dockerfile",
+      "lang": "",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/docker/README.md",
+      "lang": "md",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/docker/docker-compose.yml",
+      "lang": "yml",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/gettool/autodownload/autodownload.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/gettool/checksums.txt",
+      "lang": "txt",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/gettool/gettool.go",
+      "lang": "go",
+      "status": "gap",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/homebrew-publish.sh",
+      "lang": "c",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/htmlui_changelog.sh",
+      "lang": "c",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/kopia-homebrew.rs.template",
+      "lang": "template",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/localhtmlui.work",
+      "lang": "work",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/localhtmlui.work.sum",
+      "lang": "sum",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/make-tgz.sh",
+      "lang": "c",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/node_env.sh",
+      "lang": "c",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/recovery-job.sh",
+      "lang": "c",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/retry.sh",
+      "lang": "c",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/robustness-job.sh",
+      "lang": "c",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/rpm-publish.sh",
+      "lang": "c",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/scoop-kopia.json.template",
+      "lang": "template",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/scoop-publish.sh",
+      "lang": "c",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/sign.sh",
+      "lang": "c",
+      "status": "excluded",
+      "matched_test": null,
+      "confidence": "exact"
+    },
+    {
+      "path": "tools/tools.mk",
+      "lang": "mk",
+      "status": "unmapped",
+      "matched_test": null,
+      "confidence": "exact"
+    }
+  ]
+}

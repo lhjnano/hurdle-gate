@@ -1,0 +1,73 @@
+# test-exist-gate.yml — hurdle 소스↔테스트 존재 게이트 (GitHub Actions 템플릿)
+#
+# ▶ 사용법 (이 파일은 hurdle 저장소가 아니라 *대상 저장소*에 붙여넣는다):
+#   1) 이 파일을 대상 저장소의 .github/workflows/test-exist-gate.yml 로 복사.
+#   2) 아래 env.HURDLE_REPO_URL / HURDLE_REF 을 실제 hurdle 저장소 주소로 교체.
+#      (사설 clone 등 로컬 path를 쓰려면 "Install hurdle" 스텝의 주석 참고)
+#   3) 저장소 루트에 .hurdle.json(config)을 커밋해 둔다 — 필수.
+#   4) 브랜치 보호 설정에서 이 워크플로우의 check(이름: test-exist-gate)를
+#      required check로 지정하면 PR이 게이트를 통과해야 머지 가능.
+#
+# ▶ 레거시 갭 처리:
+#   베이스라인은 --json 으로 저장한 전수 스캔 결과(기존 코드 전체 포함)를
+#   저장소에 커밋해 둔 것이라 생각하면 된다. 예: baselines/kopia.json
+#   (hurdle scan . --json baselines/kopia.json 결과. 자세한 것은 hurdle
+#   저장소의 BASELINES.md 참조)
+#
+# ▶ 게이트 판정 원리 (래칫):
+#   --diff origin/<base_ref> 는 PR 기준 브랜치 대비 신규·변경된 파일만 평가한다.
+#   따라서 커밋된 베이스라인에 남아 있는 레거시 갭은 diff에 잡히지 않아 게이트를
+#   실패시키지 않고, "이번 PR에서 새로 추가/수정된 소스에 테스트가 없는 경우"만
+#   --strict 로 실패시킨다. 갭은 증가할 수 없고 시간이 지날수록 단조 감소한다.
+
+name: test-exist-gate
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  HURDLE_REPO_URL: https://github.com/USER/hurdle.git
+  HURDLE_REF: main
+
+jobs:
+  test-exist-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history — --diff가 base 브랜치와 비교하므로 필요)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch base branch for --diff
+        run: git fetch --no-tags origin "${{ github.base_ref }}"
+
+      - name: Install hurdle
+        run: |
+          git clone --depth 1 --branch "$HURDLE_REF" "$HURDLE_REPO_URL" /tmp/hurdle
+          sudo install -m 0755 /tmp/hurdle/hurdle /usr/local/bin/hurdle
+          hurdle scan --help >/dev/null
+        # 대안 A: hurdle을 같은 org의 별도 repo가 아니라 path 참조로 쓰고 싶으면
+        #   위 clone 스텝을 지우고 아래처럼 직접 경로 실행:
+        #     /path/to/hurdle/hurdle scan . ...
+        # 대안 B: curl 다운로드(단일 실행 파일)로도 충분하다:
+        #   curl -fsSL "$HURDLE_RAW_URL/hurdle" -o /usr/local/bin/hurdle && chmod +x /usr/local/bin/hurdle
+
+      - name: Run hurdle gate (new/changed files only)
+        # 베이스라인에 커밋된 레거시 갭은 --diff 가 신규·변경 파일만 평가하므로 무시된다.
+        run: |
+          hurdle scan . \
+            --diff "origin/${{ github.base_ref }}" \
+            --strict \
+            --config .hurdle.json \
+            --json hurdle-report.json
+
+      - name: Upload report artifact (실패 시에도 리포트는 남긴다)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hurdle-report
+          path: hurdle-report.json
+          if-no-files-found: ignore

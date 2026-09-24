@@ -25,3 +25,8 @@ hurdle = "hurdle.cli:main"
 [tool.setuptools]
 package-dir = {"" = "src"}
 packages = ["hurdle"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "--ignore=tests/fixtures"

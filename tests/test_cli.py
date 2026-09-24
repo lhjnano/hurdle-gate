@@ -34,7 +34,7 @@ CONFIGLESS_EXPECT = {
 def pristine_copy(tmp_path):
     """원본 fixtures의 사본에서 .hurdle.json을 제거해 무설정 상태를 만든다."""
     dst = tmp_path / "tree"
-    shutil.copytree(FIXTURES, dst)
+    shutil.copytree(FIXTURES, dst, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     (dst / ".hurdle.json").unlink()
     return dst
 

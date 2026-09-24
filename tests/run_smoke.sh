@@ -14,6 +14,7 @@ trap 'rm -rf "$BASEDIR" "$DIFFDIR" "$NONGIT"' EXIT
 # --- 1) configless base run (pristine copy without .hurdle.json):
 #        original 8 verdicts preserved + new fixtures' configless verdicts
 cp -r "$FIXTURES"/. "$BASEDIR"/
+find "$BASEDIR" -name __pycache__ -type d -exec rm -rf {} + 2>/dev/null
 rm -f "$BASEDIR/.hurdle.json"
 TOOL scan "$BASEDIR" --json "$OUT" >/dev/null
 
@@ -108,6 +109,7 @@ PYEOF
 
 # --- 3) --diff mode: temp git repo, modify one file, only it is judged
 cp -r "$FIXTURES"/. "$DIFFDIR"/
+find "$DIFFDIR" -name __pycache__ -type d -exec rm -rf {} + 2>/dev/null
 rm -f "$DIFFDIR/.hurdle.json"
 git -C "$DIFFDIR" init -q >/dev/null 2>&1
 git -C "$DIFFDIR" add -A

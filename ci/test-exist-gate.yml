@@ -30,8 +30,8 @@ permissions:
   contents: read
 
 env:
-  HURDLE_REPO_URL: https://github.com/USER/hurdle.git
-  HURDLE_REF: main
+  HURDLE_REPO_URL: https://github.com/lhjnano/hurdle.git
+  HURDLE_REF: v0.1.0
 
 jobs:
   test-exist-gate:

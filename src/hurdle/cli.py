@@ -456,7 +456,28 @@ def main(argv=None):
         metavar="BASE",
         help="only judge files added/modified/renamed vs BASE (git; exit 2 if not a repo)",
     )
+    uni_p = sub.add_parser(
+        "universe",
+        help="check universe coverage — every item covered, wildcarded or allowlisted",
+    )
+    uni_p.add_argument(
+        "name", help="universe name defined under 'universes' in .hurdle.json"
+    )
+    uni_p.add_argument(
+        "path", nargs="?", default=".", help="scan root (default: current directory)"
+    )
+    uni_p.add_argument("--json", dest="json_out", metavar="FILE", help="write JSON report")
+    uni_p.add_argument(
+        "--strict", action="store_true", help="exit 1 when at least one gap exists"
+    )
     args = parser.parse_args(argv)
+
+    if args.command == "universe":
+        from hurdle import universe
+
+        return universe.run(
+            args.name, args.path, json_out=args.json_out, strict=args.strict
+        )
 
     config_path = args.config
     if config_path is None:

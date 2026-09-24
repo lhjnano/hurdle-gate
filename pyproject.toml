@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "hurdle"
-version = "0.1.0"
+version = "0.3.0"
 description = "Static-analysis gate for source↔test file existence mapping"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -29,4 +29,4 @@ packages = ["hurdle"]
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
-addopts = "--ignore=tests/fixtures --ignore=tests/fixtures02"
+addopts = "--ignore=tests/fixtures --ignore=tests/fixtures02 --ignore=tests/fixtures03"

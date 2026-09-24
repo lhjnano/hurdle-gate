@@ -132,3 +132,38 @@ exec hurdle scan . --diff HEAD --strict
 ## License
 
 Apache-2.0 — see the [LICENSE](LICENSE) file for the full text.
+
+## Universe coverage (`hurdle universe`)
+
+Beyond per-file test existence, hurdle can enforce coverage of a
+**defined universe** — a complete set of items every one of which must be
+either used, wildcard-covered, or explicitly allowlisted. The motivating
+case: CDP protocol commands/events (`protocol.json` defines the complete
+universe, so "missing something" is well-defined).
+
+```jsonc
+// .hurdle.json
+"universes": {
+  "cdp-commands": {
+    "items_file": "universes/cdp-commands.json",   // bare array or {"items":[], "meta":{}}
+    "include": ["src/**/*.py"],
+    "literal_shape": "^[A-Z][A-Za-z0-9]*\\.[a-zA-Z][A-Za-z0-9]+$",
+    "wildcard_patterns": ["\\.subscribe\\(\\s*\"({domain})\\.\\*\""],
+    "extra_usage": ["Page.javascriptDialogOpening"],
+    "allowlist": {"Tracing.*": "out of scope — low-level tracing"}
+  }
+}
+```
+
+```bash
+hurdle universe cdp-commands . --strict --json report.json
+```
+
+- Usage extraction collects shape-matched string literals (module
+  constants are picked up at their definition site) and intersects them
+  with the universe — universe membership itself disambiguates commands
+  vs events that share the `Domain.name` shape.
+- Statuses: `covered` / `wildcard` (a `Domain.*` subscription) /
+  `allowed` (fnmatch on item names, reason recorded) / `gap`.
+- `--strict` exits 1 on any gap that is not allowlisted — newly added
+  universe items cannot appear silently.

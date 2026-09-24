@@ -1,0 +1,18 @@
+{
+  "universes": {
+    "demo": {
+      "items_file": "universes/demo.json",
+      "include": ["src/**/*.py"],
+      "literal_shape": "^[A-Z][A-Za-z0-9]*\\.[a-zA-Z][A-Za-z0-9]+$",
+      "wildcard_patterns": ["\\.subscribe\\(\\s*\"({domain})\\.\\*\""],
+      "extra_usage": ["Runtime.executionContextCreated"],
+      "allowlist": {
+        "Page.javascriptDialogOpening": "dialogs are driven by the harness, not this library"
+      }
+    },
+    "shape-demo": {
+      "items_file": "universes/shape.json",
+      "include": ["src/**/*.py"]
+    }
+  }
+}

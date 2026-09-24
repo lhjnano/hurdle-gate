@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "source": "fixtures03 demo protocol definition",
+    "version": "1.0"
+  },
+  "items": [
+    "Page.navigate",
+    "Page.printToPDF",
+    "Page.javascriptDialogOpening",
+    "Page.close",
+    "Runtime.evaluate",
+    "Runtime.executionContextCreated"
+  ]
+}

@@ -4,6 +4,23 @@ All notable changes to this project are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versioning follows [SemVer](https://semver.org/).
 
+## [0.3.0] - 2026-09-24
+
+### Added
+
+- `universe` subcommand — coverage of a defined universe of items against
+  actual source usage, enforcing "no silent gaps": every item must be
+  covered, wildcard-covered, or allowlisted with a reason.
+  - Universe = a JSON list of items (e.g. every CDP command/event); usage
+    is extracted as shape-matched string literals from `include` globs and
+    intersected with the universe (universe membership disambiguates
+    commands vs events sharing the same `Domain.name` shape).
+  - `wildcard_patterns` recognize `Domain.*`-style subscriptions;
+    `extra_usage` is the escape hatch for dynamically built names.
+  - Per-domain summary on the console, full `--json` report,
+    `--strict` fails on any unallowlisted gap.
+- Config section `universes` in `.hurdle.json`.
+
 ## [0.2.0] - 2026-09-24
 
 ### Changed

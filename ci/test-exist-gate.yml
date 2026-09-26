@@ -47,7 +47,7 @@ jobs:
 
       - name: Install hurdle
         run: |
-          python3 -m pip install --quiet "git+$HURDLE_REPO_URL@$HURDLE_REF"
+          python3 -m pip install --quiet "${HURDLE_SPEC:-hurdle-gate==${HURDLE_REF}}"
           hurdle scan --help >/dev/null
         # Alternative: run from a clone without pip:
         #   git clone --depth 1 --branch "$HURDLE_REF" "$HURDLE_REPO_URL" /tmp/hurdle

@@ -2,8 +2,9 @@
 #
 # ▶ Usage (this file is pasted into the *target repository*, not the hurdle repo):
 #   1) Copy this file to .github/workflows/test-exist-gate.yml in the target repository.
-#   2) Replace env.HURDLE_REPO_URL / HURDLE_REF below with the actual hurdle repository URL.
-#      (To use a local path such as a private clone, see the comments in the "Install hurdle" step.)
+#   2) Pin the hurdle version in env.HURDLE_SPEC below (PyPI distribution name:
+#      hurdle-gate). To install from a git ref instead, see the comments in the
+#      "Install hurdle" step.
 #   3) Commit a .hurdle.json (config) at the repository root — required.
 #   4) In branch protection settings, mark this workflow's check (name: test-exist-gate)
 #      as a required check so PRs must pass the gate before merging.
@@ -30,8 +31,7 @@ permissions:
   contents: read
 
 env:
-  HURDLE_REPO_URL: https://github.com/lhjnano/hurdle.git
-  HURDLE_REF: v0.1.0
+  HURDLE_SPEC: hurdle-gate==0.3.1
 
 jobs:
   test-exist-gate:
@@ -47,11 +47,10 @@ jobs:
 
       - name: Install hurdle
         run: |
-          python3 -m pip install --quiet "${HURDLE_SPEC:-hurdle-gate==${HURDLE_REF}}"
+          python3 -m pip install --quiet "$HURDLE_SPEC"
           hurdle scan --help >/dev/null
-        # Alternative: run from a clone without pip:
-        #   git clone --depth 1 --branch "$HURDLE_REF" "$HURDLE_REPO_URL" /tmp/hurdle
-        #   PYTHONPATH=/tmp/hurdle/src python3 -m hurdle scan . ...
+        # Alternative — install from a git ref instead of PyPI:
+        #   python3 -m pip install --quiet "git+https://github.com/lhjnano/hurdle.git@v0.3.1"
 
       - name: Run hurdle gate (new/changed files only)
         # Legacy gaps committed to the baseline are ignored because --diff evaluates only new/changed files.

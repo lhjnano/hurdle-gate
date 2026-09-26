@@ -18,7 +18,10 @@ Text is the default output; `--json` produces a machine-readable report.
 ## Installation
 
 ```bash
-# Recommended: isolated install via pipx
+# Recommended: from PyPI (distribution name: hurdle-gate)
+pipx install hurdle-gate
+
+# From a local clone instead
 pipx install .
 
 # Development: venv + editable install (includes dev extras)

@@ -219,3 +219,6 @@ Tiers map to AI Native maturity: basic LLM safety (error/timeout/parse),
 function calling structure (tool definition/execution/return), agent guards
 (max_steps/hallucination defense/human review), RAG integrity (source
 citation/grounding/don't-know), and resilience (reasoning model fallback).
+
+See [docs/test-gate.md](docs/test-gate.md) and [docs/ai-gate.md](docs/ai-gate.md)
+for detailed documentation of each gate.

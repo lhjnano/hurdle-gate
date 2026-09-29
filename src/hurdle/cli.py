@@ -482,6 +482,10 @@ def main(argv=None):
         "--strict", action="store_true", help="exit 1 when at least one gap exists"
     )
     ai_p.add_argument("--config", metavar="FILE", help="explicit config path")
+    ai_p.add_argument(
+        "--defaults", action="store_true",
+        help="use built-in AI Native gate definitions (5 tiers) — no config needed",
+    )
     args = parser.parse_args(argv)
 
     if args.command == "universe":
@@ -495,7 +499,8 @@ def main(argv=None):
         from hurdle import ai_gate
 
         return ai_gate.run(
-            args.path, json_out=args.json_out, strict=args.strict, config=args.config
+            args.path, json_out=args.json_out, strict=args.strict,
+            config=args.config, defaults=args.defaults,
         )
 
     config_path = args.config

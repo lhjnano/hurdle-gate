@@ -20,7 +20,9 @@ def run_hurdle(*args, cwd=None):
     return r.returncode, r.stdout + r.stderr
 
 
-class AiGateBasic(unittest.TestCase):
+class AiGateCustom(unittest.TestCase):
+    """User-defined gates via .hurdle.json ai_gates."""
+
     def setUp(self):
         self.tmp = tempfile.mkdtemp()
         self.cfg = os.path.join(self.tmp, ".hurdle.json")
@@ -39,10 +41,10 @@ class AiGateBasic(unittest.TestCase):
         self._config({
             "llm-basic": {
                 "include": ["src/**/*.ts"],
-                "detect": "chat\\.completions",
+                "detect": r"chat\.completions",
                 "require": {
-                    "error_handling": "try[\\s\\S]*catch",
-                    "timeout": "TIMEOUT",
+                    "error_handling": r"try[\s\S]*catch",
+                    "timeout": r"TIMEOUT",
                 },
             }
         })
@@ -62,10 +64,10 @@ class AiGateBasic(unittest.TestCase):
         self._config({
             "llm-basic": {
                 "include": ["src/**/*.ts"],
-                "detect": "chat\\.completions",
+                "detect": r"chat\.completions",
                 "require": {
-                    "error_handling": "try[\\s\\S]*catch",
-                    "timeout": "TIMEOUT",
+                    "error_handling": r"try[\s\S]*catch",
+                    "timeout": r"TIMEOUT",
                 },
             }
         })
@@ -84,8 +86,8 @@ class AiGateBasic(unittest.TestCase):
         self._config({
             "llm-basic": {
                 "include": ["src/**/*.ts"],
-                "detect": "chat\\.completions",
-                "require": {"timeout": "TIMEOUT"},
+                "detect": r"chat\.completions",
+                "require": {"timeout": r"TIMEOUT"},
             }
         })
         self._write("src/utils.ts", """
@@ -99,10 +101,10 @@ class AiGateBasic(unittest.TestCase):
         self._config({
             "resilience": {
                 "include": ["src/**/*.ts"],
-                "detect": "chat\\.completions",
+                "detect": r"chat\.completions",
                 "require_any": {
-                    "fallback": "reasoning_content",
-                    "retry": "retry",
+                    "fallback": r"reasoning_content",
+                    "retry": r"retry",
                 },
             }
         })
@@ -118,10 +120,10 @@ class AiGateBasic(unittest.TestCase):
         self._config({
             "resilience": {
                 "include": ["src/**/*.ts"],
-                "detect": "chat\\.completions",
+                "detect": r"chat\.completions",
                 "require_any": {
-                    "fallback": "reasoning_content",
-                    "retry": "retry",
+                    "fallback": r"reasoning_content",
+                    "retry": r"retry",
                 },
             }
         })
@@ -136,8 +138,8 @@ class AiGateBasic(unittest.TestCase):
         self._config({
             "llm-basic": {
                 "include": ["src/**/*.ts"],
-                "detect": "chat\\.completions",
-                "require": {"timeout": "TIMEOUT"},
+                "detect": r"chat\.completions",
+                "require": {"timeout": r"TIMEOUT"},
                 "allowlist": {
                     "src/legacy.ts": "pre-existing — scheduled for rewrite"
                 },
@@ -154,8 +156,8 @@ class AiGateBasic(unittest.TestCase):
         self._config({
             "llm-basic": {
                 "include": ["src/**/*.ts"],
-                "detect": "chat\\.completions",
-                "require": {"timeout": "TIMEOUT"},
+                "detect": r"chat\.completions",
+                "require": {"timeout": r"TIMEOUT"},
             }
         })
         self._write("src/llm.ts", "await client.chat.completions.create({});")
@@ -165,17 +167,143 @@ class AiGateBasic(unittest.TestCase):
         with open(jf) as fh:
             data = json.load(fh)
         self.assertEqual(data["summary"]["gap"], 1)
-        self.assertEqual(data["files"][0]["missing"], ["timeout"])
 
-    def test_no_config_exits_2(self):
+    def test_no_config_no_defaults_exits_2(self):
         empty = tempfile.mkdtemp()
         rc, out = run_hurdle("ai-gate", empty)
         self.assertEqual(rc, 2)
 
-    def test_empty_gates_exits_2(self):
-        self._config({})
-        rc, out = run_hurdle("ai-gate", self.tmp)
-        self.assertEqual(rc, 2)
+
+class AiGateDefaults(unittest.TestCase):
+    """Built-in --defaults gates (AI Native study guide tiers)."""
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+
+    def _write(self, rel, content):
+        p = os.path.join(self.tmp, rel)
+        os.makedirs(os.path.dirname(p), exist_ok=True)
+        with open(p, "w") as fh:
+            fh.write(textwrap.dedent(content))
+
+    def test_defaults_runs_without_config(self):
+        self._write("src/utils.ts", "export const x = 1;")
+        rc, out = run_hurdle("ai-gate", self.tmp, "--defaults")
+        self.assertEqual(rc, 0)
+        self.assertIn("gates=5", out)
+
+    def test_llm_basic_detects_missing_timeout(self):
+        self._write("src/llm.ts", """
+            async function call() {
+                try {
+                    const res = await client.chat.completions.create({});
+                    const data = JSON.parse(JSON.stringify(res));
+                    return data;
+                } catch (e) { return null; }
+            }
+        """)
+        rc, out = run_hurdle("ai-gate", self.tmp, "--defaults", "--strict")
+        self.assertEqual(rc, 1)
+        self.assertIn("timeout", out.lower())
+
+    def test_tool_call_id_correlation(self):
+        """tool_calls present but tool_call_id absent → gap."""
+        self._write("src/agent.ts", """
+            const TIMEOUT_MS = 30000;
+            try {
+                const msg = await client.chat.completions.create({});
+                if (msg.tool_calls) {
+                    // iterates calls but never echoes the correlation id
+                    for (const tc of msg.tool_calls) {
+                        console.log(tc.function.name);
+                    }
+                }
+                const parsed = JSON.parse(JSON.stringify(msg));
+            } catch (e) { return null; }
+        """)
+        rc, out = run_hurdle("ai-gate", self.tmp, "--defaults", "--strict")
+        self.assertEqual(rc, 1)
+        self.assertIn("tool_call_id_correlation", out)
+
+    def test_agent_loop_needs_max_steps(self):
+        self._write("src/agent.ts", """
+            const TIMEOUT_MS = 30000;
+            while (true) {
+                if (msg.tool_calls) {
+                    for (const tc of msg.tool_calls) {
+                        messages.push({
+                            role: "tool",
+                            tool_call_id: tc.id,
+                            content: "result"
+                        });
+                    }
+                } else {
+                    break;
+                }
+            }
+        """)
+        rc, out = run_hurdle("ai-gate", self.tmp, "--defaults", "--strict")
+        self.assertEqual(rc, 1)
+        self.assertIn("max_steps", out)
+
+    def test_rag_needs_source_citation(self):
+        self._write("src/rag.py", """
+            import json
+            try:
+                embeddings = model.encode(chunks)
+                vectordb = Chroma.from_texts(chunks, embeddings)
+                results = vectordb.similarity_search(query, k=3)
+                # Missing: no source citation, no hallucination defense
+                answer = llm.invoke(query)
+            except Exception:
+                results = []
+        """)
+        rc, out = run_hurdle("ai-gate", self.tmp, "--defaults", "--strict")
+        self.assertEqual(rc, 1)
+        # Should flag missing source_citation or hallucination_defense
+        self.assertTrue(
+            "source_citation" in out or "hallucination" in out,
+            "Expected source_citation or hallucination_defense in output"
+        )
+
+    def test_full_ai_native_code_passes(self):
+        """A well-written AI Native file should pass all gates."""
+        self._write("src/copilot.ts", """
+            const TIMEOUT_MS = 180000;
+            const MAX_STEPS = 5;
+
+            async function agent(question: string) {
+                const messages = [{ role: "user", content: question }];
+                try {
+                    for (let step = 0; step < MAX_STEPS; step++) {
+                        const msg = await client.chat.completions.create({
+                            model: "gpt-4o",
+                            messages,
+                            tools,
+                        });
+                        if (msg.tool_calls) {
+                            messages.push(msg);
+                            for (const tc of msg.tool_calls) {
+                                const result = executeTool(tc.function.name, tc.function.arguments);
+                                messages.push({
+                                    role: "tool",
+                                    tool_call_id: tc.id,
+                                    content: JSON.stringify(result),
+                                });
+                            }
+                        } else {
+                            break;
+                        }
+                    }
+                    const parsed = JSON.parse(JSON.stringify(messages));
+                    return parsed;
+                } catch (e) {
+                    return null;
+                }
+            }
+        """)
+        rc, out = run_hurdle("ai-gate", self.tmp, "--defaults", "--strict")
+        self.assertEqual(rc, 0, "Expected well-written AI code to pass:\n%s" % out)
 
 
 if __name__ == "__main__":

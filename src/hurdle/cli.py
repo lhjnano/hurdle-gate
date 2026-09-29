@@ -470,6 +470,18 @@ def main(argv=None):
     uni_p.add_argument(
         "--strict", action="store_true", help="exit 1 when at least one gap exists"
     )
+    ai_p = sub.add_parser(
+        "ai-gate",
+        help="check AI best-practice patterns — LLM calls must have safety guards",
+    )
+    ai_p.add_argument(
+        "path", nargs="?", default=".", help="scan root (default: current directory)"
+    )
+    ai_p.add_argument("--json", dest="json_out", metavar="FILE", help="write JSON report")
+    ai_p.add_argument(
+        "--strict", action="store_true", help="exit 1 when at least one gap exists"
+    )
+    ai_p.add_argument("--config", metavar="FILE", help="explicit config path")
     args = parser.parse_args(argv)
 
     if args.command == "universe":
@@ -477,6 +489,13 @@ def main(argv=None):
 
         return universe.run(
             args.name, args.path, json_out=args.json_out, strict=args.strict
+        )
+
+    if args.command == "ai-gate":
+        from hurdle import ai_gate
+
+        return ai_gate.run(
+            args.path, json_out=args.json_out, strict=args.strict, config=args.config
         )
 
     config_path = args.config

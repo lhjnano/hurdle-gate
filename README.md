@@ -170,3 +170,52 @@ hurdle universe cdp-commands . --strict --json report.json
   `allowed` (fnmatch on item names, reason recorded) / `gap`.
 - `--strict` exits 1 on any gap that is not allowlisted — newly added
   universe items cannot appear silently.
+
+## AI best-practice gate (`hurdle ai-gate`)
+
+For every source file that contains an LLM API call, verify that required
+best-practice patterns are also present — error handling, timeout, output
+validation, agent loop guards. Existence only, never quality (the same
+honesty as the test gate).
+
+```jsonc
+// .hurdle.json
+"ai_gates": {
+  "llm-basic": {
+    "include": ["src/**/*.ts", "src/**/*.py"],
+    "detect": "chat\\.completions|/v1/messages|anthropic",
+    "require": {
+      "error_handling": "try[\\s\\S]*catch",
+      "timeout": "TIMEOUT|timeout|AbortSignal",
+      "output_parse": "JSON\\.parse|extractJson|safeParse"
+    }
+  },
+  "agent-safety": {
+    "include": ["src/**/*.ts"],
+    "detect": "tool_calls|while.*agent",
+    "require": {
+      "max_steps": "max_steps|MAX_STEPS"
+    },
+    "require_any": {
+      "human_review": "confirm|review|approve",
+      "fallback": "fallback|reasoning_content|retry"
+    }
+  }
+}
+```
+
+```bash
+hurdle ai-gate . --strict --json report.json
+```
+
+- `detect` — files matching this regex are "AI-active" and subject to the gate.
+- `require` — all listed patterns must exist in the same file.
+- `require_any` — at least one must exist (OR semantics).
+- Per-gate `allowlist` and the global `allowlist` provide the escape hatch.
+- Statuses: `pass` / `gap` (missing patterns listed) / `allowed` / `skipped` (not AI-active).
+- `--strict` exits 1 on any gap.
+
+Tiers map to AI Native maturity: basic LLM safety (error/timeout/parse),
+function calling structure (tool definition/execution/return), agent guards
+(max_steps/hallucination defense/human review), RAG integrity (source
+citation/grounding/don't-know), and resilience (reasoning model fallback).

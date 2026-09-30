@@ -4,6 +4,32 @@ All notable changes to this project are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and versioning follows [SemVer](https://semver.org/).
 
+## [0.4.0] - 2026-09-30
+
+### Added
+
+- `ai-gate` subcommand — AI best-practice pattern verification for
+  LLM-calling code: built-in default gates (`llm-basic`, `function-calling`,
+  `agent-loop`, `rag-integrity`, `ai-resilience`) from the AI Native study
+  guide, user-defined gates via `.hurdle.json` (`ai_gates`), per-file
+  allowlisting, `--defaults`/`--strict`/`--json` modes, and the paired
+  `tool_call_id_correlation` check (tool_calls without tool_call_id).
+- JS/TS variant test lookup for `scan` — mirrors `py_variant_test` (v0.2.0)
+  for the common separate-test-dir layout (vitest/jest): `src/domain.ts` now
+  maps to `test/domain.test.ts`, and prefix variants with a required `-`/`_`
+  separator keep stems on word boundaries (`test/tui-render.test.ts` maps
+  `src/tui.tsx` but not `src/tui-logic.ts`). Sibling extensions are tried
+  (ts↔tsx, js↔jsx).
+
+### Fixed
+
+- `ai-gate` agent-loop detect false positives: the `while ... keyword` span
+  is now bounded to 200 chars (an unbounded `[\s\S]*` matched a directory
+  walk's `while stack:` plus argparse `action="store_true"` hundreds of
+  lines apart); `ReAct` is matched case-sensitively (scoped `(?-i:...)`) so
+  the "react" framework name in dependency tables no longer trips it; the
+  `agent` keyword excludes the `User-Agent` HTTP header via lookbehind.
+
 ## [0.3.0] - 2026-09-24
 
 ### Added

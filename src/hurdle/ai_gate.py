@@ -83,9 +83,15 @@ DEFAULT_GATES = {
         },
     },
     # Tier 3: Agent loops need guards (§3 ReAct)
+    # detect span is bounded to 200 chars: an unbounded `[\s\S]*` here matched
+    # e.g. `while stack:` (directory walk) + argparse `action="store_true"`
+    # hundreds of lines apart and misclassified the file as an agent loop.
+    # `ReAct` is matched case-sensitively (scoped (?-i:...)): with IGNORECASE
+    # it collides with the "react" framework name in dependency tables.
+    # `agent` excludes the `User-Agent` HTTP header via lookbehind.
     "agent-loop": {
         "include": ["src/**/*.ts", "src/**/*.py", "web/src/**/*.ts"],
-        "detect": r"while[\s\S]*(?:tool_call|Action|agent)|ReAct|react_agent",
+        "detect": r"while[\s\S]{0,200}?(?:tool_call|action|(?<!User-)\bagent\b)|(?-i:ReAct)|react_agent",
         "require": {
             "max_steps": r"max_steps|MAX_STEPS|for\s+\w+\s+in\s+range",
             "termination": r"Final Answer|final_answer|break|done\s*=\s*True",

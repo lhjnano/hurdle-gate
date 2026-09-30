@@ -164,3 +164,49 @@ def test_diff_judges_only_changed_files(tmp_path):
     assert by["ts/b.ts"]["status"] == "gap"
     assert data["mode"] == "diff"
     assert data["base"] == "HEAD"
+
+
+# ─── JS/TS variant test lookup (v0.3.0) ─────────────────────────────
+
+
+def _mk(tmp_path, rel, content="export const x = 1;\n"):
+    p = tmp_path / rel
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(content, encoding="utf-8")
+
+
+def test_js_variant_test_dir_exact_match(tmp_path):
+    """src/domain.ts ↔ test/domain.test.ts (separate test-dir layout) → ok."""
+    _mk(tmp_path, "src/domain.ts")
+    _mk(tmp_path, "test/domain.test.ts")
+    out = tmp_path / "r.json"
+    assert main(["scan", str(tmp_path), "--json", str(out)]) == 0
+    by = {r["path"]: r for r in load_report(out)["files"]}
+    assert by["src/domain.ts"]["status"] == "ok"
+    assert by["src/domain.ts"]["matched_test"] == "test/domain.test.ts"
+
+
+def test_js_variant_prefix_match_and_no_cross_match(tmp_path):
+    """test/tui-render.test.ts maps src/tui.tsx (prefix variant) but must NOT
+    claim src/tui-logic.ts — the separator keeps {stem} on word boundaries."""
+    _mk(tmp_path, "src/tui.tsx")
+    _mk(tmp_path, "src/tui-logic.ts")
+    _mk(tmp_path, "test/tui-render.test.ts")
+    out = tmp_path / "r.json"
+    assert main(["scan", str(tmp_path), "--strict", "--json", str(out)]) == 1  # tui-logic gap
+    by = {r["path"]: r for r in load_report(out)["files"]}
+    assert by["src/tui.tsx"]["status"] == "ok"
+    assert by["src/tui.tsx"]["matched_test"] == "test/tui-render.test.ts"
+    assert by["src/tui-logic.ts"]["status"] == "gap"
+
+
+def test_js_colocated_still_preferred(tmp_path, capsys):
+    """Colocated tests keep working; variant lookup is only a fallback."""
+    _mk(tmp_path, "src/util.ts")
+    _mk(tmp_path, "src/util.test.ts")
+    _mk(tmp_path, "test/util.test.ts")
+    out = tmp_path / "r.json"
+    assert main(["scan", str(tmp_path), "--json", str(out)]) == 0
+    by = {r["path"]: r for r in load_report(out)["files"]}
+    assert by["src/util.ts"]["status"] == "ok"
+    assert by["src/util.ts"]["matched_test"] == "src/util.test.ts"

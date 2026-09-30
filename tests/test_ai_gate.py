@@ -246,6 +246,83 @@ class AiGateDefaults(unittest.TestCase):
         self.assertEqual(rc, 1)
         self.assertIn("max_steps", out)
 
+    def test_agent_loop_walk_and_argparse_not_detected(self):
+        """Regression: `while stack:` (bounded directory walk) plus argparse
+        `action="store_true"` several hundred chars later must NOT classify the
+        file as an agent loop. Guards the detect span bound (200 chars)."""
+        self._write("src/cli_like.py", """
+            import argparse
+            import os
+
+            def walk(root):
+                stack = [root]
+                files = []
+                while stack:
+                    d = stack.pop()
+                    for e in os.scandir(d):
+                        if e.name.startswith(".") or e.is_symlink():
+                            continue
+                        if e.is_dir(follow_symlinks=False):
+                            stack.append(e.path)
+                        elif e.is_file(follow_symlinks=False):
+                            files.append(e.path)
+                return sorted(files)
+
+            def build_parser():
+                parser = argparse.ArgumentParser()
+                parser.add_argument("--strict", action="store_true",
+                                    help="exit 1 when at least one gap exists")
+                return parser
+        """)
+        rc, out = run_hurdle("ai-gate", self.tmp, "--defaults")
+        self.assertEqual(rc, 0)
+        self.assertIn("gap=0", out)
+
+    def test_agent_loop_react_framework_not_detected(self):
+        """Regression: the framework name "react" in a dependency table must
+        NOT trip the ReAct alternative (case-scoped (?-i:ReAct)), and a
+        User-Agent header near a while loop must not trip the agent keyword."""
+        self._write("src/websearch_like.ts", """
+            const FRAMEWORKS: Record<string, { name: string; docs: string }> = {
+              "react": { name: "React", docs: "https://react.dev" },
+              "solid-js": { name: "Solid.js", docs: "https://solidjs.org" },
+            };
+
+            const HEADERS = { "User-Agent": "my-tool/1.0" };
+
+            export function fetchAll(urls: string[]): string[] {
+                const out: string[] = [];
+                const q = [...urls];
+                while (q.length) {
+                    const u = q.shift();
+                    out.push(u + HEADERS["User-Agent"]);
+                    break;
+                }
+                return out;
+            }
+        """)
+        rc, out = run_hurdle("ai-gate", self.tmp, "--defaults")
+        self.assertEqual(rc, 0)
+        self.assertIn("gap=0", out)
+
+    def test_agent_loop_react_camelcase_still_detected(self):
+        """Positive control: a real ReAct loop (CamelCase marker) without
+        max_steps must still be reported as a gap."""
+        self._write("src/react_agent.ts", """
+            // ReAct loop: reason → act → observe
+            const steps = 0;
+            export function reactRun() {
+                const queue = [1, 2, 3];
+                while (queue.length) {
+                    queue.pop();
+                    break;
+                }
+            }
+        """)
+        rc, out = run_hurdle("ai-gate", self.tmp, "--defaults", "--strict")
+        self.assertEqual(rc, 1)
+        self.assertIn("max_steps", out)
+
     def test_rag_needs_source_citation(self):
         self._write("src/rag.py", """
             import json

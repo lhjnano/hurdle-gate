@@ -11,7 +11,9 @@ required '_' separators keep {stem} on word boundaries). "__init__.py" is a
 package marker (excluded) unless strict_init=true; non-test .py files under a
 configured test_dirs directory (default ["tests","test"]) are excluded as
 test-support modules.
-JS/TS: {stem}.test.{ext} / {stem}.spec.{ext} next to the file.
+JS/TS: {stem}.test.{ext} / {stem}.spec.{ext} next to the file; variant
+       lookup (v0.3.0) in configured test_dirs at the file dir and scan
+       root: {stem}.test.{ext} and prefix variants {stem}-*/{stem}_*.test.{ext}.
 C/shell (.c .h .cc .cpp .sh): module-aggregated heuristic mode. The module is
 the directory holding the source file; a module is ok (confidence=heuristic)
 when a registered module_map keyword appears in some C test file path or
@@ -201,6 +203,44 @@ def py_variant_test(d, stem, scan_root, cfg, listing):
     return None
 
 
+def js_variant_test(d, stem, ext, scan_root, cfg, listing):
+    """Variant test lookup for JS/TS sources (v0.3.0).
+
+    Mirrors py_variant_test for the common "separate top-level test dir"
+    layout (vitest/jest): matches {stem}.test.{ext} / {stem}.spec.{ext}
+    exactly, plus prefix variants {stem}-*.test.{ext} / {stem}_*.test.{ext}
+    (and .spec equivalents) via fnmatch inside the configured test dirs next
+    to the file (d) and at the scan root. The required separator ('-' or '_')
+    keeps {stem} on word boundaries, so test/tui-render.test.ts matches
+    src/tui.tsx but NOT src/tui-logic.ts. Sibling extensions are tried
+    (ts↔tsx, js↔jsx) so a .tsx source can be tested by a .test.ts file.
+    Returns matched abs path or None.
+    """
+    ext_family = {
+        ".ts": (".ts", ".tsx"), ".tsx": (".tsx", ".ts"),
+        ".js": (".js", ".jsx"), ".jsx": (".jsx", ".js"),
+    }.get(ext, (ext,))
+    patterns = tuple(
+        stem + sep + "*" + kind + e
+        for sep in ("-", "_")
+        for kind in (".test", ".spec")
+        for e in ext_family
+    ) + tuple(
+        stem + kind + e for kind in (".test", ".spec") for e in ext_family
+    )
+    seen = set()
+    for base in (d, scan_root):
+        for td in cfg.test_dirs:
+            tdir = os.path.normpath(os.path.join(base, td))
+            if tdir in seen:
+                continue
+            seen.add(tdir)
+            for fname in listing(tdir):
+                if any(fnmatch.fnmatch(fname, p) for p in patterns):
+                    return os.path.join(tdir, fname)
+    return None
+
+
 def c_module_status(rel, c_tests, read_content, cfg):
     """Heuristic verdict for one C/shell source file. Returns (status, matched_test)."""
     d = os.path.dirname(rel)
@@ -285,7 +325,8 @@ def scan(path, cfg=None, diff_base=None):
                 py_dir_cache[dirpath] = sorted(
                     e.name
                     for e in os.scandir(dirpath)
-                    if e.is_file(follow_symlinks=False) and e.name.endswith(".py")
+                    if e.is_file(follow_symlinks=False)
+                    and e.name.endswith((".py", ".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"))
                 )
             except OSError:
                 py_dir_cache[dirpath] = []
@@ -352,6 +393,12 @@ def scan(path, cfg=None, diff_base=None):
             if status == "gap" and lang == "py":
                 stem = os.path.splitext(name)[0]
                 hit = py_variant_test(d, stem, root, cfg, tests_dir_listing)
+                if hit:
+                    status = "ok"
+                    matched = os.path.relpath(hit, root).replace(os.sep, "/")
+            elif status == "gap" and lang in JS_EXTS:
+                stem, ext = os.path.splitext(name)
+                hit = js_variant_test(d, stem, ext, root, cfg, tests_dir_listing)
                 if hit:
                     status = "ok"
                     matched = os.path.relpath(hit, root).replace(os.sep, "/")

@@ -31,7 +31,7 @@ permissions:
   contents: read
 
 env:
-  HURDLE_SPEC: hurdle-gate==0.3.1
+  HURDLE_SPEC: hurdle-gate==0.4.0
 
 jobs:
   test-exist-gate:
